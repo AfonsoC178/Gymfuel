@@ -6,7 +6,7 @@
     <title>GymFuel — Tudo para o teu treino</title>
     <meta name="description" content="GymFuel — Energia para o teu treino.">
 
-    <!-- Tailwind CDN Oficial (Substitui os ficheiros locais salvos que davam erro) -->
+    <!-- Tailwind CDN Oficial -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Fontes do Google -->
@@ -14,7 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Lucide Icons CDN Oficial (Substitui o script local que quebrava os botões) -->
+    <!-- Biblioteca Oficial do Supabase (Essencial para a Base de Dados funcionar) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Lucide Icons CDN Oficial -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
@@ -901,6 +904,14 @@ function renderPayPalButton(){
 document.getElementById('search').addEventListener('input',(e)=>{ query=e.target.value; renderProducts(); });
 
 // =============================================
+// LIGAÇÃO À BASE DE DADOS (SUPABASE)
+// =============================================
+const supabaseUrl = window._env_?.SUPABASE_URL || ''; 
+const supabaseKey = window._env_?.SUPABASE_KEY || '';
+
+const sb = supabase.createClient(supabaseUrl, supabaseKey);
+
+// =============================================
 // INIT
 // =============================================
 (async function init(){
@@ -925,5 +936,6 @@ sb.auth.onAuthStateChange(async (_e,session)=>{
 </script>
 
 
-<script defer="" src="./GymFuel — Tudo para o teu treino2_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous" style="display: none !important;"></script>
-</body></html>
+</script>
+</body>
+</html>
