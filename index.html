@@ -890,20 +890,28 @@ function renderPayPalButton(){
 // search
 // =============================================
 document.getElementById('search').addEventListener('input',(e)=>{ query=e.target.value; renderProducts(); });
-
+    // =============================================
+// LIGAÇÃO AUTOMÁTICA (INTEGRAÇÃO VERCEL)
 // =============================================
-// LIGAÇÃO À BASE DE DADOS (SUPABASE)
-// =============================================
-const supabaseUrl = window._env_?.SUPABASE_URL || 'https://comrswwbipbmffyxvgyc.supabase.co/rest/v1/'; 
-const supabaseKey = window._env_?.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
+// 1. Tenta ler as chaves que a integração oficial da Vercel injetou
+let supabaseUrl = window._env_?.SUPABASE_URL || process?.env?.SUPABASE_URL;
+let supabaseKey = window._env_?.SUPABASE_ANON_KEY || process?.env?.SUPABASE_ANON_KEY;
 
+// 2. PLANO B: Se a Vercel não injetar em HTML puro, colocamos os teus dados fixos aqui de forma segura
+if (!supabaseUrl || !supabaseKey) {
+  // SUBSTITUI os textos abaixo com o URL e a KEY reais do teu painel do Supabase (Project Settings > API)
+  supabaseUrl = 'https://comrswwbipbmffyxvgyc.supabase.co/rest/v1/';
+  supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
+}
+
+// Criar a instância global 'sb' para que todo o teu código (filtros, carrinho, login) funcione
 const sb = supabase.createClient(supabaseUrl, supabaseKey);
 
 // =============================================
 // INIT
 // =============================================
 (async function init(){
-  lucide.createIcons();
+
   // auth state
   const { data: sess } = await sb.auth.getSession();
 USER = sess?.session?.user || null;
