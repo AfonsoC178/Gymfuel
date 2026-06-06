@@ -894,8 +894,8 @@ document.getElementById('search').addEventListener('input',(e)=>{ query=e.target
 // =============================================
 // LIGAÇÃO À BASE DE DADOS (SUPABASE)
 // =============================================
-const supabaseUrl = window._env_?.SUPABASE_URL || ''; 
-const supabaseKey = window._env_?.SUPABASE_KEY || '';
+const supabaseUrl = window._env_?.SUPABASE_URL || 'https://comrswwbipbmffyxvgyc.supabase.co/rest/v1/'; 
+const supabaseKey = window._env_?.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
 
 const sb = supabase.createClient(supabaseUrl, supabaseKey);
 
