@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://button-fix-19.preview.emergentagent.com/index-vercel-fixed.html -->
+<html lang="pt-PT"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymFuel — Tudo para o teu treino</title>
+    <meta name="description" content="GymFuel — Energia para o teu treino.">
+
+    <!-- Tailwind CDN Oficial -->
+    <script src="https://cdn.tailwindcss.com"></script><style>/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-50: oklch(97.1% 0.013 17.38);
+    --color-red-200: oklch(88.5% 0.062 18.334);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-orange-400: oklch(75% 0.183 55.934);
+    --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-orange-600: oklch(64.6% 0.222 41.116);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-blue-700: oklch(48.8% 0.243 264.376);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-900: oklch(21% 0.034 264.665);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --container-2xl: 42rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .-top-2 {
+    top: calc(var(--spacing) * -2);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-1\/2 {
+    top: calc(1 / 2 * 100%);
+  }
+  .-right-2 {
+    right: calc(var(--spacing) * -2);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
+  .bottom-6 {
+    bottom: calc(var(--spacing) * 6);
+  }
+  .left-1\/2 {
+    left: calc(1 / 2 * 100%);
+  }
+  .left-3 {
+    left: calc(var(--spacing) * 3);
+  }
+  .left-4 {
+    left: calc(var(--spacing) * 4);
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .z-\[100\] {
+    z-index: 100;
+  }
+  .z-\[105\] {
+    z-index: 105;
+  }
+  .z-\[110\] {
+    z-index: 110;
+  }
+  .z-\[115\] {
+    z-index: 115;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
+  }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-3 {
+    height: calc(var(--spacing) * 3);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-44 {
+    height: calc(var(--spacing) * 44);
+  }
+  .h-72 {
+    height: calc(var(--spacing) * 72);
+  }
+  .h-\[18px\] {
+    height: 18px;
+  }
+  .h-\[22px\] {
+    height: 22px;
+  }
+  .h-\[500px\] {
+    height: 500px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .max-h-\[95vh\] {
+    max-height: 95vh;
+  }
+  .max-h-\[420px\] {
+    max-height: 420px;
+  }
+  .max-h-full {
+    max-height: 100%;
+  }
+  .min-h-\[40px\] {
+    min-height: 40px;
+  }
+  .w-1\/3 {
+    width: calc(1 / 3 * 100%);
+  }
+  .w-1\/4 {
+    width: calc(1 / 4 * 100%);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-\[18px\] {
+    width: 18px;
+  }
+  .w-\[22px\] {
+    width: 22px;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .w-px {
+    width: 1px;
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
+  .max-w-\[1400px\] {
+    max-width: 1400px;
+  }
+  .max-w-full {
+    max-width: 100%;
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-y-1\/2 {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-around {
+    justify-content: space-around;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-0\.5 {
+    gap: calc(var(--spacing) * 0.5);
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
+  }
+  .gap-7 {
+    gap: calc(var(--spacing) * 7);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .rounded-l {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+  .rounded-r {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-gray-700 {
+    border-color: var(--color-gray-700);
+  }
+  .border-gray-800 {
+    border-color: var(--color-gray-800);
+  }
+  .border-orange-500 {
+    border-color: var(--color-orange-500);
+  }
+  .border-red-200 {
+    border-color: var(--color-red-200);
+  }
+  .bg-\[\#fce8dd\] {
+    background-color: #fce8dd;
+  }
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-black\/60 {
+    background-color: color-mix(in srgb, #000 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+    }
+  }
+  .bg-black\/70 {
+    background-color: color-mix(in srgb, #000 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 70%, transparent);
+    }
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-400\/40 {
+    background-color: color-mix(in srgb, oklch(70.7% 0.022 261.325) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-400) 40%, transparent);
+    }
+  }
+  .bg-gray-900 {
+    background-color: var(--color-gray-900);
+  }
+  .bg-orange-500 {
+    background-color: var(--color-orange-500);
+  }
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/10 {
+    background-color: color-mix(in srgb, #fff 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+  }
+  .bg-white\/50 {
+    background-color: color-mix(in srgb, #fff 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+    }
+  }
+  .bg-gradient-to-br {
+    --tw-gradient-position: to bottom right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-gray-200 {
+    --tw-gradient-from: var(--color-gray-200);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-gray-300 {
+    --tw-gradient-to: var(--color-gray-300);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .fill-orange-500 {
+    fill: var(--color-orange-500);
+  }
+  .object-contain {
+    object-fit: contain;
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-3\.5 {
+    padding-block: calc(var(--spacing) * 3.5);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-14 {
+    padding-top: calc(var(--spacing) * 14);
+  }
+  .pr-12 {
+    padding-right: calc(var(--spacing) * 12);
+  }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .leading-snug {
+    --tw-leading: var(--leading-snug);
+    line-height: var(--leading-snug);
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[0\.3em\] {
+    --tw-tracking: 0.3em;
+    letter-spacing: 0.3em;
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+  .text-blue-500 {
+    color: var(--color-blue-500);
+  }
+  .text-blue-700 {
+    color: var(--color-blue-700);
+  }
+  .text-gray-200 {
+    color: var(--color-gray-200);
+  }
+  .text-gray-300 {
+    color: var(--color-gray-300);
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
+  .text-orange-500 {
+    color: var(--color-orange-500);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .drop-shadow-2xl {
+    --tw-drop-shadow-size: drop-shadow(0 25px 25px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15)));
+    --tw-drop-shadow: drop-shadow(var(--drop-shadow-2xl));
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .group-hover\:scale-105 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:border-orange-500 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-orange-500);
+      }
+    }
+  }
+  .hover\:bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:bg-orange-500 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-orange-500);
+      }
+    }
+  }
+  .hover\:text-black {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-black);
+      }
+    }
+  }
+  .hover\:text-blue-400 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blue-400);
+      }
+    }
+  }
+  .hover\:text-orange-400 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-orange-400);
+      }
+    }
+  }
+  .hover\:text-orange-500 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-orange-500);
+      }
+    }
+  }
+  .hover\:text-orange-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-orange-600);
+      }
+    }
+  }
+  .hover\:text-red-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-red-600);
+      }
+    }
+  }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-orange-500 {
+    &:focus {
+      --tw-ring-color: var(--color-orange-500);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+  .disabled\:opacity-50 {
+    &:disabled {
+      opacity: 50%;
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
+    }
+  }
+  .md\:inline {
+    @media (width >= 48rem) {
+      display: inline;
+    }
+  }
+  .md\:h-\[560px\] {
+    @media (width >= 48rem) {
+      height: 560px;
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .md\:text-4xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .md\:text-5xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .md\:text-6xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
+  .lg\:grid-cols-2 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-5 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .lg\:text-7xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-7xl);
+      line-height: var(--tw-leading, var(--text-7xl--line-height));
+    }
+  }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+    }
+  }
+}
+</style>
+
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Biblioteca Oficial do Supabase (Essencial para a Base de Dados funcionar) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Lucide Icons CDN Oficial -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+  :root { --accent:#0ac235; --accent-hover:#3120e9; }
+  html,body{margin:0;padding:0;font-family:'Inter',system-ui,sans-serif;}
+  .font-display{font-family:'Oswald','Inter',sans-serif;letter-spacing:.02em;}
+  .hero-gradient{background:linear-gradient(90deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.2) 100%);}
+  .deals-gradient{background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);}
+  .btn-accent{background:var(--accent);color:#fff;font-weight:700;letter-spacing:.08em;}
+  .btn-accent:hover{background:var(--accent-hover);}
+  .countdown-box{background:var(--accent);color:#fff;min-width:56px;text-align:center;padding:10px 8px;font-weight:700;font-size:28px;line-height:1;}
+  .product-card{transition:transform .25s,box-shadow .25s;}
+  .product-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08);}
+  .goal-shape{position:absolute;inset:0;background:#f3f4f6;transform:skewX(-12deg);border-radius:8px;z-index:0;}
+  .slider-dot{transition:all .3s;}
+  .slider-dot.active{background:var(--accent);width:28px;}
+  .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s;}
+  .slide.active{opacity:1;}
+  input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-right-2{right:-0.5rem}.-top-2{top:-0.5rem}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.left-4{left:1rem}.right-4{right:1rem}.top-0{top:0px}.top-1\/2{top:50%}.left-3{left:0.75rem}.right-0{right:0px}.z-10{z-index:10}.z-50{z-index:50}.z-\[100\]{z-index:100}.z-\[105\]{z-index:105}.z-\[110\]{z-index:110}.z-\[115\]{z-index:115}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.ml-1{margin-left:0.25rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-3{margin-top:0.75rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-2{height:0.5rem}.h-4{height:1rem}.h-44{height:11rem}.h-5{height:1.25rem}.h-72{height:18rem}.h-\[18px\]{height:18px}.h-\[22px\]{height:22px}.h-\[500px\]{height:500px}.h-full{height:100%}.h-20{height:5rem}.h-3{height:0.75rem}.h-16{height:4rem}.max-h-\[420px\]{max-height:420px}.max-h-\[95vh\]{max-height:95vh}.max-h-full{max-height:100%}.min-h-\[40px\]{min-height:40px}.w-1\/3{width:33.333333%}.w-1\/4{width:25%}.w-2{width:0.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-\[18px\]{width:18px}.w-\[22px\]{width:22px}.w-full{width:100%}.w-px{width:1px}.w-20{width:5rem}.w-3{width:0.75rem}.w-16{width:4rem}.w-6{width:1.5rem}.min-w-0{min-width:0px}.max-w-\[1400px\]{max-width:1400px}.max-w-md{max-width:28rem}.max-w-2xl{max-width:42rem}.max-w-full{max-width:100%}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-0\.5{gap:0.125rem}.gap-3{gap:0.75rem}.gap-1{gap:0.25rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-l{border-top-left-radius:0.25rem;border-bottom-left-radius:0.25rem}.rounded-r{border-top-right-radius:0.25rem;border-bottom-right-radius:0.25rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-b{border-bottom-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-orange-500{--tw-border-opacity:1;border-color:rgb(249 115 22 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-red-200{--tw-border-opacity:1;border-color:rgb(254 202 202 / var(--tw-border-opacity, 1))}.bg-\[\#fce8dd\]{--tw-bg-opacity:1;background-color:rgb(252 232 221 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-400\/40{background-color:rgb(156 163 175 / 0.4)}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-orange-500{--tw-bg-opacity:1;background-color:rgb(249 115 22 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/50{background-color:rgb(255 255 255 / 0.5)}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-black\/70{background-color:rgb(0 0 0 / 0.7)}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-gray-200{--tw-gradient-from:#e5e7eb var(--tw-gradient-from-position);--tw-gradient-to:rgb(229 231 235 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-gray-300{--tw-gradient-to:#d1d5db var(--tw-gradient-to-position)}.fill-orange-500{fill:#f97316}.object-contain{object-fit:contain}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-5{padding:1.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-1\.5{padding:0.375rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pl-5{padding-left:1.25rem}.pr-12{padding-right:3rem}.pb-6{padding-bottom:1.5rem}.pt-14{padding-top:3.5rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-tight{line-height:1.25}.leading-snug{line-height:1.375}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.tracking-wide{letter-spacing:0.025em}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.drop-shadow-2xl{--tw-drop-shadow:drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:border-orange-500:hover{--tw-border-opacity:1;border-color:rgb(249 115 22 / var(--tw-border-opacity, 1))}.hover\:bg-orange-500:hover{--tw-bg-opacity:1;background-color:rgb(249 115 22 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-blue-400:hover{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.hover\:text-orange-400:hover{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.hover\:text-orange-500:hover{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.hover\:text-orange-600:hover{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-orange-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(249 115 22 / var(--tw-ring-opacity, 1))}.disabled\:opacity-50:disabled{opacity:0.5}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 768px){.md\:block{display:block}.md\:inline{display:inline}.md\:h-\[560px\]{height:560px}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:block{display:block}.lg\:flex{display:flex}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:text-7xl{font-size:4.5rem;line-height:1}}</style><style type="text/css">:root img[width="728"][height="90"], :root [href="https://adstub.net/cina777/"], :root [href="https://adstub.net/arab777/"], :root [href="https://adstub.net/ratu89/"], :root [href="https://adstub.net/judi89/"], :root [href^="//mage98rquewz.com/"], :root [href^="//x4pollyxxpush.com/"], :root span[id^="ezoic-pub-ad-placeholder-"], :root ins.adsbygoogle[data-ad-slot], :root ins.adsbygoogle[data-ad-client], :root img[src^="https://s-img.adskeeper.com/"], :root guj-ad, :root gpt-ad, :root div[ow-ad-unit-wrapper], :root div[id^="zergnet-widget"], :root div[id^="vuukle-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="st"][style^="z-index: 999999999;"], :root div[id^="rc-widget-"], :root div[id^="mrec-leaderboard-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dfp-ad-"], :root div[id^="crt-"][style], :root div[id^="adspot-"], :root ps-connatix-module, :root div[id^="ad_position_"], :root div[id^="ad-div-"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root [href="https://adstub.net/rusia777/"], :root div[data-id-advertdfpconf], :root div[data-dfp-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-alias="300x250 Ad 2"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-adname], :root div[data-ad-targeting], :root div[data-ad-region], :root div[data-ad-placeholder], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root div[id^="google_dfp_"], :root ad-slot, :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root amp-ad, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://lnkxt.bannerator.com/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root [href^="https://groorsoa.net/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.effectiveratecpm.com/"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://www.dql2clk.com/"], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.dating-finder.com/signup/?ai_d="], :root a[href^="https://wolf-327b.com/"], :root a[href^="https://voluum.prom-xcams.com/"], :root a[href^="https://twinrdsyte.com/"], :root .category-ads:not(html):not(body):not(.post), :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root [data-identity="adhesive-ad"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://tatrck.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"], :root a[href^="https://t.ajump1.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root div[data-alias="300x250 Ad 1"], :root a[href^="https://syndicate.contentsserved.com/"], :root a[href^="https://svb-analytics.trackerrr.com/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"] + .ob_source, :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root a[href^="https://stardomcoit.com/"], :root a[href^="https://track.aftrk5.com/"], :root a[href^="https://slkmis.com/"], :root a[href^="https://myclick-2.com/"], :root a[href^="https://sexynearme.com/"], :root a[href^="https://s.zlinkt.com/"], :root [data-ad-manager-id], :root a[href^="https://s.zlinkr.com/"], :root bottomadblock, :root a[href^="https://s.zlinkd.com/"], :root [href="https://adstub.net/gaza88/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://s.zlink7.com/"], :root a[href^="https://s.ma3ion.com/"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://s.gentlefieldpattern.com/"], :root a[href^="https://s.eunow4u.com/"], :root a[href^="https://random-affiliate.atimaze.com/"], :root #kt_player > div[style$="display: block;"][style*="inset: 0px;"], :root [href$="/sexdating.php"], :root a[href^="https://quotationfirearmrevision.com/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://www.dating-finder.com/?ai_d="], :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root app-ad, :root [href^="https://ap.octopuspop.com/click/"] > img, :root a[href^="https://postback1win.com/"], :root a[href^="https://a.adtng.com/"], :root a[href^="https://playnano.online/offerwalls/?ref="], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://pb-front.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://streamate.com/landing/click/"], :root div[class^="Adstyled__AdWrapper-"], :root a[href^="https://osfultrbriolenai.info/"], :root a[href^="https://upsups.click/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [data-ad-name], :root a[href^="https://loboclick.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://join.bannedsextapes.com/track/"], :root a[href^="https://jaxofuna.com/"], :root a[href^="https://italarizege.xyz/"], :root .category-ad:not(html):not(body):not(.post), :root a[href^="https://s.happyleafmotion.com/"], :root a[href^="https://identicaldrench.com/"], :root a[href^="https://helmethomicidal.com/"], :root a[href^="https://golinks.work/"], :root a[href^="https://go.xxxjmp.com"], :root a[href^="https://zirdough.net/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root [data-role="tile-ads-module"], :root a[href^="https://go.xlviirdr.com"], :root div[class$="-adlabel"], :root a[href^="https://go.xlviiirdr.com"], :root a[href^="https://go.xlivrdr.com"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://lijavaxa.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://www.bang.com/?aff="], :root #mgb-container > #mgb, :root a[href^="https://go.admjmp.com"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://datewhisper.life/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root a[href^="https://get-link.xyz/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://clicks.affstrack.com/"] > img, :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://dl-protect.net/"], :root a[href*=".foxqck.com/"], :root a[href^="https://ctosrd.com/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root app-advertisement, :root a[href^="https://getmatchedlocally.com/"], :root a[href^="https://clickins.slixa.com/"], :root a[href^="https://combodef.com/"], :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root a[href^="https://ctrdwm.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://click.Ggpickaff.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[onclick^="window.location.replace('https://random-affiliate.atimaze.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://t.ajrkm1.com/"], :root a[href^="https://bongacams10.com/track?"], :root a[href^="//hoodingluster.com/"], :root a[href^="https://black77854.com/"], :root a[href^="https://rixofa.com/"], :root a[href^="https://best-experience-cool.com/"], :root [data-taboola-options], :root a[href^="https://believessway.com/"], :root a[href^="https://Click.ggpickaff.com/"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="http://revolvemockerycopper.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ausoafab.net/"], :root a[href^="https://aj1070.online/"], :root a[href^="https://ads.planetwin365affiliate.com/"], :root a[href^="https://ads.leovegas.com/"], :root a[href^="https://a.medfoodhome.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://a.candyai.love/"], :root .banner-img > .pbl, :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [data-testid^="section-AdRowBillboard"], :root .ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox), :root broadstreet-zone-container, :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://1winpb.com/"], :root a[href^="https://chaturbate.com/in/?"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href*="&maxads="], :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="https://1betandgonow.com/"], :root div[id^="optidigital-adslot"], :root [href^="https://wsup.ai/"], :root a[href^="https://123-stream.org/"], :root a[href^="https://in.rabbtrk.com/"], :root a[href^="http://www.h4trck.com/"], :root [href^="https://a.acebet.com/api/click?"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://partners.etoro.com/"], :root [href="https://chaturbate.jjgirls.com/"] > img, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root amp-ad-custom, :root a[href^="http://trk.globwo.online/"], :root a-ad, :root a[href^="https://offhandpump.com/"], :root a[href^="http://stickingrepute.com/"], :root #slashboxes > .deals-rail, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="//startgaming.net/tienda/" i], :root a[href^="https://a.medfoodsafety.com/"], :root a[href^="//go.eabids.com/"], :root a[href^=" https://www.friendlyduck.com/AF_"], :root [data-cl-spot-id], :root a[href*="/jump/next.php?r="], :root a[href^="https://go.nordvpn.net/aff"] > img, :root .\[\&_\.gdprAdTransparencyCogWheelButton\]\:\!pjra-z-\[5\], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [href^="https://www.profitablegatecpm.com/"], :root a[href*=".cfm?domain="][href*="&fp="], :root [id^="section-ad-banner"], :root [id^="ad_slider"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://wmctjd.com/"], :root a[href*="//jjgirls.com/sex/Chaturbate"], :root [id^="ad-wrap-"], :root a[href^="http://sarcasmadvisor.com/"], :root #adframe:not(frameset), :root [href^="https://www.restoro.com/"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://www.hostg.xyz/"] > img, :root a[href^="https://bngpt.com/"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root a[href^="https://s.zlink3.com/"], :root a[href^="http://sneakyadministration.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root citrus-ad-wrapper, :root a[href^="https://go.grinsbest.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="https://t.acam.link/"], :root a[href^="https://go.strpjmp.com/"], :root [href^="https://url.totaladblock.com/"], :root div[id^="ad-position-"], :root a[href^="https://www.toprevenuegate.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://bngprm.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root [href^="https://wct.link/click?"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root a[href^="https://iqbroker.com/"][href*="?aff="], :root .p-post-ad:not(html):not(body), :root [href^="https://rpwmct.com/"], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://mylead.global/stl/"] > img, :root [data-testid="adBanner-wrapper"], :root [href^="https://optimizedelite.com/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root a[href^="https://go.bbrdbr.com"], :root a[href^="https://fc.lc/ref/"], :root a[href^="https://pb-imc.com/"], :root a[href^="https://www8.smartadserver.com/"], :root topadblock, :root a[href^="//s.zlinkd.com/"], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root a[href^="https://go.rmishe.com/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://explore-site.com/"], :root .AdBody:not(body), :root [href="https://adstub.net/indo666/"], :root [href^="https://glersakr.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://go.bushheel.com/"], :root a[href^="https://ctjdwm.com/"], :root a[href^="https://camfapr.com/landing/click/"], :root div[data-ad-wrapper], :root .gnt_em_vp_c[data-g-s="vp_dk"], :root [href="//sexcams.plus/"], :root [href^="http://www.mypillow.com/"] > img, :root a[href^="https://join.virtualtaboo.com/track/"], :root [id^="ad_sky"], :root [name^="google_ads_iframe"], :root a[href^="https://www.liquidfire.mobi/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root a[href^="http://join.brokestraightboys.com/track/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root a[href^="https://track.aftrk3.com/"], :root [href^="https://join3.bannedsextapes.com"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="https://activate-game.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [data-wpas-zoneid], :root [data-type="ad-vertical"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://s.cant3am.com/"], :root [data-testid^="taboola-"], :root a[href^="https://track.1234sd123.com/"], :root zeus-ad, :root [data-testid="prism-ad-wrapper"], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href*=".adsrv.eacdn.com/"], :root #teaser1[style^="width:autopx;"], :root [href^="https://www.cloudways.com/en/?id"], :root #modal[doskip][prclck], :root a[href^="https://t.ajrkm3.com/"], :root in-page-message[doskip], :root [href^="https://aads.com/campaigns/"], :root a[href^="https://juicyads.in/"], :root div[id^="apn_native_ad_slot_"], :root .adhesion:not(body), :root a[href^="https://bodelen.com/"], :root a[href*=".g2afse.com/"], :root a[href^="https://go.hpyjmp.com"], :root iframe[scrolling="no"][sandbox*="allow-popups allow-modals"][style^="width: 100%; height: 100%; border: none;"], :root [href^="https://mystore.com/"] > img, :root span[data-ez-ph-id], :root [href^="https://track.aftrk1.com/"], :root div[id^="adngin-"], :root [data-rc-widget], :root a[href^="https://stellarcashflow.net/trck/"], :root [data-mobile-ad-id], :root [href^="https://join.playboyplus.com/track/"], :root a[href^="https://gamingadlt.com/?offer="], :root a[href^="https://adclick.g.doubleclick.net/"], :root [data-freestar-ad][id], :root [data-dynamic-ads], :root [data-desktop-ad-id], :root a[href^="https://go.rmhfrtnd.com"], :root [data-asg-ins], :root [data-block-type="ad"], :root [data-ad-width], :root [onclick*="content.ad/"], :root a[href^="https://snowdayonline.xyz/"], :root a[href^="https://join.dreamsexworld.com/"], :root AMP-AD, :root [data-ad-cls], :root .ad-box:not(#ad-banner):not(:empty), :root [data-ez-name], :root a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"], :root [id^="div-gpt-ad"], :root .ob_container .item-container-obpd, :root #ads_top:not(a), :root a[href^="https://go.mnaspm.com/"], :root a[href^="https://service.bv-aff-trx.com/"], :root a[href^="https://6-partner.com/"], :root [class^="s2nPlayer"], :root a[href^="https://traffdaq.com/"], :root [data-testid="ad_testID"], :root [href^="https://ad.admitad.com/"], :root [href^="https://mypillow.com/"] > img, :root [data-testid="commercial-label-taboola"], :root [class^="div-gpt-ad"], :root a[href^="http://tc.tradetracker.net/"] > img, :root [class^="amp-ad-"], :root AD-SLOT, :root a[href^="https://www.googleadservices.com/pagead/aclk?"] > img, :root [data-ad-module], :root a[href^="https://a.bestcontentfood.top/"], :root #kt_player > a[target="_blank"], :root [href^="https://zone.gotrackier.com/"], :root .ad-area:not(.text-ad), :root a[href^="https://ab.advertiserurl.com/aff/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root .sidebar-ad:not(.adsbygoogle), :root a[href^="https://s.zlinkn.com/"], :root a[href^="https://go.xxxvjmp.com/"], :root .ads_container:not(.text-ad), :root [class^="adDisplay-module"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root ad-shield-ads, :root a[href^="https://hot-growngames.life/"], :root .ad_box:not(.text-ad), :root [href="https://jdrucker.com/gold"] > img, :root .ad-wrap:not(#google_ads_iframe_checktag), :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="https://ad1.adfarm1.adition.com/"], :root #teaser3[style^="width:autopx;"], :root div[id^="div-gpt-"], :root a[href^="https://gml-grp.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[href^="https://wittered-mainging.com/"], :root #teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"], :root [data-revive-zoneid], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root #teaser2[style^="width:autopx;"], :root a[href^="https://losingoldfry.com/"], :root div[id^="adrotate_widgets-"], :root .Ad-Container:not(.adsbygoogle) { display: none !important; }</style><style type="text/css">:root img[width="728"][height="90"], :root [href="https://adstub.net/cina777/"], :root [href="https://adstub.net/arab777/"], :root [href="https://adstub.net/ratu89/"], :root [href="https://adstub.net/judi89/"], :root [href^="//mage98rquewz.com/"], :root [href^="//x4pollyxxpush.com/"], :root span[id^="ezoic-pub-ad-placeholder-"], :root ins.adsbygoogle[data-ad-slot], :root ins.adsbygoogle[data-ad-client], :root img[src^="https://s-img.adskeeper.com/"], :root guj-ad, :root gpt-ad, :root div[ow-ad-unit-wrapper], :root div[id^="zergnet-widget"], :root div[id^="vuukle-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="st"][style^="z-index: 999999999;"], :root div[id^="rc-widget-"], :root div[id^="mrec-leaderboard-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dfp-ad-"], :root div[id^="crt-"][style], :root div[id^="adspot-"], :root ps-connatix-module, :root div[id^="ad_position_"], :root div[id^="ad-div-"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root [href="https://adstub.net/rusia777/"], :root div[data-id-advertdfpconf], :root div[data-dfp-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-alias="300x250 Ad 2"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-adname], :root div[data-ad-targeting], :root div[data-ad-region], :root div[data-ad-placeholder], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root div[id^="google_dfp_"], :root ad-slot, :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root amp-ad, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://lnkxt.bannerator.com/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root [href^="https://groorsoa.net/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.effectiveratecpm.com/"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://www.dql2clk.com/"], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.dating-finder.com/signup/?ai_d="], :root a[href^="https://wolf-327b.com/"], :root a[href^="https://voluum.prom-xcams.com/"], :root a[href^="https://twinrdsyte.com/"], :root .category-ads:not(html):not(body):not(.post), :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root [data-identity="adhesive-ad"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://tatrck.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"], :root a[href^="https://t.ajump1.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root div[data-alias="300x250 Ad 1"], :root a[href^="https://syndicate.contentsserved.com/"], :root a[href^="https://svb-analytics.trackerrr.com/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"] + .ob_source, :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root a[href^="https://stardomcoit.com/"], :root a[href^="https://track.aftrk5.com/"], :root a[href^="https://slkmis.com/"], :root a[href^="https://myclick-2.com/"], :root a[href^="https://sexynearme.com/"], :root a[href^="https://s.zlinkt.com/"], :root [data-ad-manager-id], :root a[href^="https://s.zlinkr.com/"], :root bottomadblock, :root a[href^="https://s.zlinkd.com/"], :root [href="https://adstub.net/gaza88/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://s.zlink7.com/"], :root a[href^="https://s.ma3ion.com/"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://s.gentlefieldpattern.com/"], :root a[href^="https://s.eunow4u.com/"], :root a[href^="https://random-affiliate.atimaze.com/"], :root #kt_player > div[style$="display: block;"][style*="inset: 0px;"], :root [href$="/sexdating.php"], :root a[href^="https://quotationfirearmrevision.com/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://www.dating-finder.com/?ai_d="], :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root app-ad, :root [href^="https://ap.octopuspop.com/click/"] > img, :root a[href^="https://postback1win.com/"], :root a[href^="https://a.adtng.com/"], :root a[href^="https://playnano.online/offerwalls/?ref="], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://pb-front.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://streamate.com/landing/click/"], :root div[class^="Adstyled__AdWrapper-"], :root a[href^="https://osfultrbriolenai.info/"], :root a[href^="https://upsups.click/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [data-ad-name], :root a[href^="https://loboclick.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://join.bannedsextapes.com/track/"], :root a[href^="https://jaxofuna.com/"], :root a[href^="https://italarizege.xyz/"], :root .category-ad:not(html):not(body):not(.post), :root a[href^="https://s.happyleafmotion.com/"], :root a[href^="https://identicaldrench.com/"], :root a[href^="https://helmethomicidal.com/"], :root a[href^="https://golinks.work/"], :root a[href^="https://go.xxxjmp.com"], :root a[href^="https://zirdough.net/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root [data-role="tile-ads-module"], :root a[href^="https://go.xlviirdr.com"], :root div[class$="-adlabel"], :root a[href^="https://go.xlviiirdr.com"], :root a[href^="https://go.xlivrdr.com"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://lijavaxa.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://www.bang.com/?aff="], :root #mgb-container > #mgb, :root a[href^="https://go.admjmp.com"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://datewhisper.life/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root a[href^="https://get-link.xyz/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://clicks.affstrack.com/"] > img, :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://dl-protect.net/"], :root a[href*=".foxqck.com/"], :root a[href^="https://ctosrd.com/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root app-advertisement, :root a[href^="https://getmatchedlocally.com/"], :root a[href^="https://clickins.slixa.com/"], :root a[href^="https://combodef.com/"], :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root a[href^="https://ctrdwm.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://click.Ggpickaff.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[onclick^="window.location.replace('https://random-affiliate.atimaze.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://t.ajrkm1.com/"], :root a[href^="https://bongacams10.com/track?"], :root a[href^="//hoodingluster.com/"], :root a[href^="https://black77854.com/"], :root a[href^="https://rixofa.com/"], :root a[href^="https://best-experience-cool.com/"], :root [data-taboola-options], :root a[href^="https://believessway.com/"], :root a[href^="https://Click.ggpickaff.com/"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="http://revolvemockerycopper.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ausoafab.net/"], :root a[href^="https://aj1070.online/"], :root a[href^="https://ads.planetwin365affiliate.com/"], :root a[href^="https://ads.leovegas.com/"], :root a[href^="https://a.medfoodhome.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://a.candyai.love/"], :root .banner-img > .pbl, :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [data-testid^="section-AdRowBillboard"], :root .ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox), :root broadstreet-zone-container, :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://1winpb.com/"], :root a[href^="https://chaturbate.com/in/?"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href*="&maxads="], :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="https://1betandgonow.com/"], :root div[id^="optidigital-adslot"], :root [href^="https://wsup.ai/"], :root a[href^="https://123-stream.org/"], :root a[href^="https://in.rabbtrk.com/"], :root a[href^="http://www.h4trck.com/"], :root [href^="https://a.acebet.com/api/click?"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://partners.etoro.com/"], :root [href="https://chaturbate.jjgirls.com/"] > img, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root amp-ad-custom, :root a[href^="http://trk.globwo.online/"], :root a-ad, :root a[href^="https://offhandpump.com/"], :root a[href^="http://stickingrepute.com/"], :root #slashboxes > .deals-rail, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="//startgaming.net/tienda/" i], :root a[href^="https://a.medfoodsafety.com/"], :root a[href^="//go.eabids.com/"], :root a[href^=" https://www.friendlyduck.com/AF_"], :root [data-cl-spot-id], :root a[href*="/jump/next.php?r="], :root a[href^="https://go.nordvpn.net/aff"] > img, :root .\[\&_\.gdprAdTransparencyCogWheelButton\]\:\!pjra-z-\[5\], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [href^="https://www.profitablegatecpm.com/"], :root a[href*=".cfm?domain="][href*="&fp="], :root [id^="section-ad-banner"], :root [id^="ad_slider"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://wmctjd.com/"], :root a[href*="//jjgirls.com/sex/Chaturbate"], :root [id^="ad-wrap-"], :root a[href^="http://sarcasmadvisor.com/"], :root #adframe:not(frameset), :root [href^="https://www.restoro.com/"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://www.hostg.xyz/"] > img, :root a[href^="https://bngpt.com/"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root a[href^="https://s.zlink3.com/"], :root a[href^="http://sneakyadministration.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root citrus-ad-wrapper, :root a[href^="https://go.grinsbest.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="https://t.acam.link/"], :root a[href^="https://go.strpjmp.com/"], :root [href^="https://url.totaladblock.com/"], :root div[id^="ad-position-"], :root a[href^="https://www.toprevenuegate.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://bngprm.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root [href^="https://wct.link/click?"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root a[href^="https://iqbroker.com/"][href*="?aff="], :root .p-post-ad:not(html):not(body), :root [href^="https://rpwmct.com/"], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://mylead.global/stl/"] > img, :root [data-testid="adBanner-wrapper"], :root [href^="https://optimizedelite.com/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root a[href^="https://go.bbrdbr.com"], :root a[href^="https://fc.lc/ref/"], :root a[href^="https://pb-imc.com/"], :root a[href^="https://www8.smartadserver.com/"], :root topadblock, :root a[href^="//s.zlinkd.com/"], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root a[href^="https://go.rmishe.com/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://explore-site.com/"], :root .AdBody:not(body), :root [href="https://adstub.net/indo666/"], :root [href^="https://glersakr.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://go.bushheel.com/"], :root a[href^="https://ctjdwm.com/"], :root a[href^="https://camfapr.com/landing/click/"], :root div[data-ad-wrapper], :root .gnt_em_vp_c[data-g-s="vp_dk"], :root [href="//sexcams.plus/"], :root [href^="http://www.mypillow.com/"] > img, :root a[href^="https://join.virtualtaboo.com/track/"], :root [id^="ad_sky"], :root [name^="google_ads_iframe"], :root a[href^="https://www.liquidfire.mobi/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root a[href^="http://join.brokestraightboys.com/track/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root a[href^="https://track.aftrk3.com/"], :root [href^="https://join3.bannedsextapes.com"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="https://activate-game.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [data-wpas-zoneid], :root [data-type="ad-vertical"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://s.cant3am.com/"], :root [data-testid^="taboola-"], :root a[href^="https://track.1234sd123.com/"], :root zeus-ad, :root [data-testid="prism-ad-wrapper"], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href*=".adsrv.eacdn.com/"], :root #teaser1[style^="width:autopx;"], :root [href^="https://www.cloudways.com/en/?id"], :root #modal[doskip][prclck], :root a[href^="https://t.ajrkm3.com/"], :root in-page-message[doskip], :root [href^="https://aads.com/campaigns/"], :root a[href^="https://juicyads.in/"], :root div[id^="apn_native_ad_slot_"], :root .adhesion:not(body), :root a[href^="https://bodelen.com/"], :root a[href*=".g2afse.com/"], :root a[href^="https://go.hpyjmp.com"], :root iframe[scrolling="no"][sandbox*="allow-popups allow-modals"][style^="width: 100%; height: 100%; border: none;"], :root [href^="https://mystore.com/"] > img, :root span[data-ez-ph-id], :root [href^="https://track.aftrk1.com/"], :root div[id^="adngin-"], :root [data-rc-widget], :root a[href^="https://stellarcashflow.net/trck/"], :root [data-mobile-ad-id], :root [href^="https://join.playboyplus.com/track/"], :root a[href^="https://gamingadlt.com/?offer="], :root a[href^="https://adclick.g.doubleclick.net/"], :root [data-freestar-ad][id], :root [data-dynamic-ads], :root [data-desktop-ad-id], :root a[href^="https://go.rmhfrtnd.com"], :root [data-asg-ins], :root [data-block-type="ad"], :root [data-ad-width], :root [onclick*="content.ad/"], :root a[href^="https://snowdayonline.xyz/"], :root a[href^="https://join.dreamsexworld.com/"], :root AMP-AD, :root [data-ad-cls], :root .ad-box:not(#ad-banner):not(:empty), :root [data-ez-name], :root a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"], :root [id^="div-gpt-ad"], :root .ob_container .item-container-obpd, :root #ads_top:not(a), :root a[href^="https://go.mnaspm.com/"], :root a[href^="https://service.bv-aff-trx.com/"], :root a[href^="https://6-partner.com/"], :root [class^="s2nPlayer"], :root a[href^="https://traffdaq.com/"], :root [data-testid="ad_testID"], :root [href^="https://ad.admitad.com/"], :root [href^="https://mypillow.com/"] > img, :root [data-testid="commercial-label-taboola"], :root [class^="div-gpt-ad"], :root a[href^="http://tc.tradetracker.net/"] > img, :root [class^="amp-ad-"], :root AD-SLOT, :root a[href^="https://www.googleadservices.com/pagead/aclk?"] > img, :root [data-ad-module], :root a[href^="https://a.bestcontentfood.top/"], :root #kt_player > a[target="_blank"], :root [href^="https://zone.gotrackier.com/"], :root .ad-area:not(.text-ad), :root a[href^="https://ab.advertiserurl.com/aff/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root .sidebar-ad:not(.adsbygoogle), :root a[href^="https://s.zlinkn.com/"], :root a[href^="https://go.xxxvjmp.com/"], :root .ads_container:not(.text-ad), :root [class^="adDisplay-module"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root ad-shield-ads, :root a[href^="https://hot-growngames.life/"], :root .ad_box:not(.text-ad), :root [href="https://jdrucker.com/gold"] > img, :root .ad-wrap:not(#google_ads_iframe_checktag), :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="https://ad1.adfarm1.adition.com/"], :root #teaser3[style^="width:autopx;"], :root div[id^="div-gpt-"], :root a[href^="https://gml-grp.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[href^="https://wittered-mainging.com/"], :root #teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"], :root [data-revive-zoneid], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root #teaser2[style^="width:autopx;"], :root a[href^="https://losingoldfry.com/"], :root div[id^="adrotate_widgets-"], :root .Ad-Container:not(.adsbygoogle) { display: none !important; }</style></head><body class="bg-white text-gray-900">
+
+<!-- ============ HEADER ============ -->
+<header class="bg-black text-white sticky top-0 z-50">
+  <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-8">
+    <a href="https://button-fix-19.preview.emergentagent.com/GymFuel%20%E2%80%94%20Tudo%20para%20o%20teu%20treino2.html" class="flex items-center shrink-0">
+      <span class="font-display text-3xl font-bold tracking-wider">Gym<span class="text-blue-700">Fuel</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 font-display text-sm tracking-widest">
+      <a href="https://button-fix-19.preview.emergentagent.com/GymFuel%20%E2%80%94%20Tudo%20para%20o%20teu%20treino.html" class="text-blue-500">Página Inicial</a>
+      <a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="hover:text-blue-400">Loja</a>
+      <a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#deals" class="hover:text-blue-400">Páginas</a>    
+      <a href="https://button-fix-19.preview.emergentagent.com/Contactos.html" class="hover:text-blue-400">Contactos</a>
+    </nav>
+    <div class="flex-1 max-w-md relative">
+      <input id="search" type="search" placeholder="Search products..." class="w-full bg-white text-gray-900 rounded-full pl-5 pr-12 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" class="lucide lucide-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 w-[18px] h-[18px]"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+    </div>
+    <div class="flex items-center gap-5 shrink-0">
+      <div id="auth-area"><button onclick="openAuth(&#39;signin&#39;)" class="flex items-center gap-2 text-sm hover:text-orange-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-5 h-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="hidden md:inline">Sign In / Register</span></button></div>
+      <button class="relative hover:text-orange-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" aria-hidden="true" class="lucide lucide-heart w-[22px] h-[22px]"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg><span class="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span></button>
+      <button id="open-cart" class="relative hover:text-orange-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shopping-cart" aria-hidden="true" class="lucide lucide-shopping-cart w-[22px] h-[22px]"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg><span id="cart-count" class="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">1</span></button>
+    </div>
+  </div>
+  <div class="bg-[#fce8dd] text-gray-800">
+    <div class="max-w-[1400px] mx-auto px-6 py-3 flex flex-wrap items-center justify-around gap-4 text-sm font-medium">
+      <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="truck" aria-hidden="true" class="lucide lucide-truck w-[18px] h-[18px] text-orange-500"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg> Entrega grátis em encomendas acima de 75€</div>
+      <div class="hidden md:block w-px h-5 bg-gray-400/40"></div>
+      <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="package" aria-hidden="true" class="lucide lucide-package w-[18px] h-[18px] text-orange-500"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg> Devoluções fáceis em todas as encomendas</div>
+      <div class="hidden md:block w-px h-5 bg-gray-400/40"></div>
+      <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="headphones" aria-hidden="true" class="lucide lucide-headphones w-[18px] h-[18px] text-orange-500"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg> 24/7 Apoio ao Cliente</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO SLIDER ============ -->
+
+<!-- ============ Primeiro Slide ============ -->
+<section class="relative h-[500px] md:h-[560px] overflow-hidden bg-black" id="slider">
+  <div class="slide active" style="background-image:url(&#39;https://images.unsplash.com/photo-1709315957145-a4bad1feef28?auto=format&amp;fit=crop&amp;w=1600&amp;q=80&#39;)">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="relative max-w-[1400px] mx-auto h-full px-6 flex items-center">
+      <div class="hidden md:block w-1/3"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80" class="max-h-[420px] object-contain drop-shadow-2xl"></div>
+      <div class="flex-1 text-center text-white px-4">
+        <div class="text-orange-500 font-display tracking-[0.3em] text-sm mb-4">SHOP WITH CONFIDENCE</div>
+        <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">BEST QUALITY, BEST PRICE</h1>
+        <p class="mt-4 text-lg text-gray-200">membros têm mais 10% de desconto</p>
+        <a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="mt-8 inline-block btn-accent px-10 py-3.5 rounded-full text-sm">COMPRAR AGORA</a>
+      </div>
+      <div class="hidden lg:block w-1/4"></div>
+    </div>
+  </div>
+   <!-- ============ Segundo Slide ============ -->
+  <div class="slide" style="background-image:url(&#39;https://images.unsplash.com/photo-1606335543042-57c525922933?auto=format&amp;fit=crop&amp;w=1600&amp;q=80&#39;)">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="relative max-w-[1400px] mx-auto h-full px-6 flex items-center">
+      <div class="flex-1 text-center text-white px-4">
+        <div class="text-orange-500 font-display tracking-[0.3em] text-sm mb-4">PERFORMANCE SEM COMPROMISSOS</div>
+        <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">WHEY PROTEIN PREMIUM</h1>
+        <p class="mt-4 text-lg text-gray-200">20g de proteína por dose</p>
+        <a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="mt-8 inline-block btn-accent px-10 py-3.5 rounded-full text-sm">VER COLEÇÃO</a>
+      </div>
+    </div>
+  </div>
+   <!-- ============ Treceiro Slide ============ -->
+  <div class="slide" style="background-image:url(&#39;https://images.unsplash.com/photo-1656785280288-fc1088e4d99e?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxib2R5YnVpbGRlciUyMGZsZXhpbmd8ZW58MHx8fGJsYWNrfDE3NzY5NTExOTZ8MA&amp;ixlib=rb-4.1.0&amp;q=85&#39;)">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="relative max-w-[1400px] mx-auto h-full px-6 flex items-center">
+      <div class="flex-1 text-center text-white px-4">
+        <div class="text-orange-500 font-display tracking-[0.3em] text-sm mb-4">SHOP WITH CONFIDENCE</div>
+        <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">CREATINA MONOHIDRATADA</h1>
+        <p class="mt-4 text-lg text-gray-200">Mais força, mais explosão</p>
+        <a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="mt-8 inline-block btn-accent px-10 py-3.5 rounded-full text-sm">SAIBA MAIS</a>
+      </div>
+    </div>
+  </div>
+   <!-- ============ Butões de Slide ============ -->
+  <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-orange-500 text-white p-3 rounded-full transition"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-left" aria-hidden="true" class="lucide lucide-chevron-left w-[22px] h-[22px]"><path d="m15 18-6-6 6-6"></path></svg></button>
+  <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-orange-500 text-white p-3 rounded-full transition"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="lucide lucide-chevron-right w-[22px] h-[22px]"><path d="m9 18 6-6-6-6"></path></svg></button>
+  <div id="slide-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2"></div>
+</section>
+
+<!-- ============ SHOP BY GOAL ============ -->
+<section class="max-w-[1400px] mx-auto px-6 py-16">
+  <div class="text-center mb-12"><h2 class="font-display text-2xl md:text-3xl font-bold tracking-wider">Compra com objetivo <span class="text-orange-500"></span></h2></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="relative group cursor-pointer">
+      <div class="relative overflow-hidden"><div class="goal-shape"></div><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" class="relative z-10 h-72 w-full object-contain group-hover:scale-105 transition-transform"></div>
+      <div class="text-center mt-6"><h3 class="font-display text-xl font-bold tracking-wider">Emagrecimento</h3><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="text-orange-500 underline mt-2 inline-block text-sm font-medium">Get Cut</a></div>
+    </div>
+    <div class="relative group cursor-pointer">
+      <div class="relative overflow-hidden"><div class="goal-shape"></div><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80" class="relative z-10 h-72 w-full object-contain group-hover:scale-105 transition-transform"></div>
+      <div class="text-center mt-6"><h3 class="font-display text-xl font-bold tracking-wider">PERFORMANCE</h3><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="text-orange-500 underline mt-2 inline-block text-sm font-medium">Get Powerful</a></div>
+    </div>
+    <div class="relative group cursor-pointer">
+      <div class="relative overflow-hidden"><div class="goal-shape"></div><img src="https://images.unsplash.com/photo-1581009137042-c552e485697a?auto=format&fit=crop&w=600&q=80" class="relative z-10 h-72 w-full object-contain group-hover:scale-105 transition-transform"></div>
+      <div class="text-center mt-6"><h3 class="font-display text-xl font-bold tracking-wider">Força</h3><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="text-orange-500 underline mt-2 inline-block text-sm font-medium">Get Muscles</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="border-t border-gray-200"></div>
+
+<!-- ============ LATEST PRODUCTS ============ -->
+<section id="products" class="max-w-[1400px] mx-auto px-6 py-16">
+  <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
+    <h2 class="font-display text-2xl md:text-3xl font-bold tracking-wider">Produtos <span class="text-orange-500">›</span></h2>
+    <div id="tabs" class="flex items-center gap-2 bg-gray-100 rounded-full p-1"></div>
+  </div>
+  <div id="category-chips" class="flex flex-wrap gap-2 mb-8"></div>
+  <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5"></div>
+  <div id="products-empty" class="hidden text-center py-20 text-gray-500"><p>Nenhum produto encontrado.</p></div>
+  <div id="products-loading" class="text-center py-20 text-gray-500">A carregar produtos...</div>
+</section>
+
+
+<!-- ============ THIS WEEK DEALS ============ -->
+<section id="deals" class="deals-gradient text-white py-14">
+  <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wide">THIS WEEK DEALS</h2>
+      <div class="font-display text-2xl md:text-4xl font-bold text-orange-500 mt-2">UP TO 50% OFF</div>
+      <p class="text-gray-400 text-xs tracking-widest mt-6">LIMITED QUANTITIES. HURRY UP!</p>
+      <div id="countdown" class="flex gap-2 mt-3"><div class="countdown-box">30</div><div class="countdown-box">23</div><div class="countdown-box">59</div><div class="countdown-box">25</div></div>
+      <a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="inline-block mt-6 text-orange-500 underline text-sm font-medium">View All Deals</a>
+    </div>
+    <div id="deals-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer" class="bg-black text-gray-300 pt-14 pb-6">
+  <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div>
+      <div class="font-display text-2xl font-bold text-white">Gym<span class="text-orange-500">Fuel</span></div>
+      <p class="text-sm mt-3 text-gray-400">Alimenta a tua performance. Suplementos de topo para quem treina a sério.</p>
+      <div class="flex gap-3 mt-4">
+        <i data-lucide="facebook" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+        <i data-lucide="instagram" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+        <i data-lucide="twitter" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+        <i data-lucide="youtube" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+      </div>
+    </div>
+    <div><h4 class="font-display text-white tracking-widest text-sm mb-3">SHOP</h4><ul class="space-y-2 text-sm"><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="hover:text-orange-500">Proteínas</a></li><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="hover:text-orange-500">Creatina</a></li><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="hover:text-orange-500">Pré-treino</a></li><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#products" class="hover:text-orange-500">Vitaminas</a></li></ul></div>
+    <div><h4 class="font-display text-white tracking-widest text-sm mb-3">INFO</h4><ul class="space-y-2 text-sm"><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#" class="hover:text-orange-500">Sobre nós</a></li><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#" class="hover:text-orange-500">Envios</a></li><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#" class="hover:text-orange-500">Devoluções</a></li><li><a href="https://database-config-hub.preview.emergentagent.com/gymfuel.html#" class="hover:text-orange-500">Contacto</a></li></ul></div>
+    <div><h4 class="font-display text-white tracking-widest text-sm mb-3">NEWSLETTER</h4><p class="text-sm text-gray-400 mb-3">Recebe 10% off na 1ª compra.</p><div class="flex"><input type="email" placeholder="teu@email.com" class="flex-1 px-3 py-2 bg-gray-900 border border-gray-700 text-sm rounded-l"><button class="btn-accent px-4 rounded-r text-xs">OK</button></div></div>
+  </div>
+  <div class="max-w-[1400px] mx-auto px-6 mt-10 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">© <span id="year">2026</span> GymFuel — Tudo para o teu corpo. Tudo para o teu treino.</div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
+  <div class="absolute inset-0 bg-black/60" onclick="toggleCart(false)"></div>
+  <div class="absolute right-0 top-0 w-full max-w-md bg-white h-full flex flex-col shadow-2xl">
+    <div class="flex items-center justify-between p-5 border-b">
+      <h3 class="font-display text-xl font-bold">CARRINHO (<span id="cart-count-2">1</span>)</h3>
+      <button onclick="toggleCart(false)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x w-[22px] h-[22px]"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+    </div>
+    <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-3"><div class="flex gap-3 items-center border rounded-lg p-3">
+        <div class="w-16 h-16 bg-gray-100 rounded flex items-center justify-center overflow-hidden shrink-0">
+          <img src="data:image/jpeg;base64,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" class="max-h-full max-w-full object-contain">
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-sm line-clamp-2">machine man burner 120caps</div>
+          <div class="text-orange-500 font-bold text-sm">€15.00</div>
+        </div>
+        <div class="flex items-center gap-1 border rounded">
+          <button onclick="changeQty(&#39;fat burner&#39;,-1)" class="p-1.5 hover:bg-gray-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus" aria-hidden="true" class="lucide lucide-minus w-3 h-3"><path d="M5 12h14"></path></svg></button>
+          <span class="text-sm w-6 text-center">1</span>
+          <button onclick="changeQty(&#39;fat burner&#39;,1)" class="p-1.5 hover:bg-gray-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus w-3 h-3"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        </div>
+      </div></div>
+    <div class="border-t p-5 space-y-3">
+      <div class="flex justify-between"><span class="text-gray-600">Total:</span><span id="cart-total" class="text-xl font-bold">€15.00</span></div>
+      <button id="checkout-btn" class="btn-accent w-full py-3 rounded-md disabled:opacity-50">FINALIZAR COMPRA</button>
+      <button id="clear-cart-btn" class="w-full py-2 text-sm text-gray-500 hover:text-red-600">Limpar carrinho</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRODUCT MODAL ============ -->
+<div id="product-modal" class="fixed inset-0 z-[105] hidden bg-black/70 flex items-center justify-center p-4"></div>
+
+<!-- ============ AUTH MODAL ============ -->
+<div id="auth-modal" class="fixed inset-0 z-[115] hidden bg-black/70 flex items-center justify-center p-4">
+  <div class="bg-white w-full max-w-md rounded-xl overflow-hidden" onclick="event.stopPropagation()">
+    <div class="flex border-b">
+      <button id="tab-signin" class="flex-1 py-4 font-display tracking-wider bg-black text-white">ENTRAR</button>
+      <button id="tab-signup" class="flex-1 py-4 font-display tracking-wider bg-white text-gray-600">REGISTAR</button>
+    </div>
+    <form id="auth-form" class="p-6 space-y-4">
+      <div id="auth-name-wrap" class="hidden relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-[18px] h-[18px]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <input name="name" placeholder="Nome" class="w-full border rounded px-10 py-3 text-sm focus:ring-2 focus:ring-orange-500 outline-none">
+      </div>
+      <div class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-[18px] h-[18px]"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+        <input name="email" type="email" placeholder="Email" required="" class="w-full border rounded px-10 py-3 text-sm focus:ring-2 focus:ring-orange-500 outline-none">
+      </div>
+      <div class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" aria-hidden="true" class="lucide lucide-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-[18px] h-[18px]"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <input name="password" type="password" placeholder="Password" required="" minlength="6" class="w-full border rounded px-10 py-3 text-sm focus:ring-2 focus:ring-orange-500 outline-none">
+      </div>
+      <div id="auth-error" class="hidden text-red-600 text-sm bg-red-50 border border-red-200 rounded p-2"></div>
+      <button id="auth-submit" type="submit" class="btn-accent w-full py-3 rounded-md disabled:opacity-50">ENTRAR</button>
+      <div class="text-center text-xs text-gray-500" id="auth-switch">Não tens conta? <button type="button" id="auth-switch-btn" class="text-orange-500 underline font-semibold">Regista-te</button></div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div id="checkout-modal" class="fixed inset-0 z-[110] hidden bg-black/70 flex items-center justify-center p-4">
+  <div class="bg-white w-full max-w-2xl rounded-xl overflow-hidden max-h-[95vh] overflow-y-auto">
+    <div class="flex items-center justify-between p-5 border-b">
+      <h3 id="checkout-title" class="font-display text-xl font-bold">DADOS DE ENVIO</h3>
+      <button onclick="toggleCheckout(false)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x w-[22px] h-[22px]"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+    </div>
+    <div id="checkout-steps" class="flex items-center justify-center gap-4 py-3 bg-gray-50 border-b text-xs font-semibold">
+      <span id="step-1" class="text-orange-500">1. DADOS</span>
+      <span class="text-gray-300">—</span>
+      <span id="step-2" class="text-gray-400">2. PAGAMENTO</span>
+      <span class="text-gray-300">—</span>
+      <span id="step-3" class="text-gray-400">3. CONFIRMAÇÃO</span>
+    </div>
+    <div id="checkout-body"></div>
+  </div>
+</div>
+
+<!-- Supabase SDK -->
+
+<script>
+// =============================================
+// ⚙️ CONFIGURAÇÃO 
+// =============================================
+const SUPABASE_URL='https://comrswwbipbmffyxvgyc.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
+
+// PayPal — cola o teu Client ID (deixar vazio desativa o PayPal, fica só transferência)
+const PAYPAL_CLIENT_ID = '';  // exemplo: 'AXXXXXXXXXXXXXXXXXXXXXXXX'
+const PAYPAL_CURRENCY  = 'EUR';
+
+// Transferência Bancária — edita com os teus dados
+const BANK_HOLDER = 'GymFuel Lda.';
+const BANK_IBAN   = 'PT50 0000 0000 0000 0000 0000 0';
+
+// =============================================
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// session
+let SESSION_ID = localStorage.getItem('gymfuel_session');
+if(!SESSION_ID){ SESSION_ID = crypto.randomUUID(); localStorage.setItem('gymfuel_session', SESSION_ID); }
+
+let PRODUCTS=[], CART=[], activeTab='Featured', activeCategory=null, query='';
+let USER=null;
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// =============================================
+// HERO SLIDER
+// =============================================
+let slideIdx=0;
+const slides = document.querySelectorAll('#slider .slide');
+const dotsEl = document.getElementById('slide-dots');
+slides.forEach((_,i)=>{ const d=document.createElement('button'); d.className='slider-dot h-2 rounded-full bg-white/50 '+(i===0?'active':'w-2'); d.onclick=()=>showSlide(i); dotsEl.appendChild(d); });
+function showSlide(i){
+  slideIdx=(i+slides.length)%slides.length;
+  slides.forEach((s,k)=>s.classList.toggle('active',k===slideIdx));
+  dotsEl.querySelectorAll('.slider-dot').forEach((d,k)=>{ d.classList.toggle('active',k===slideIdx); d.classList.toggle('w-2',k!==slideIdx); });
+}
+document.getElementById('prev-slide').onclick=()=>showSlide(slideIdx-1);
+document.getElementById('next-slide').onclick=()=>showSlide(slideIdx+1);
+setInterval(()=>showSlide(slideIdx+1),6000);
+
+// =============================================
+// COUNTDOWN
+// =============================================
+let cdState={d:30,h:23,m:59,s:43};
+const cdEl=document.getElementById('countdown');
+function renderCountdown(){ cdEl.innerHTML=['d','h','m','s'].map(k=>`<div class="countdown-box">${String(cdState[k]).padStart(2,'0')}</div>`).join(''); }
+setInterval(()=>{ cdState.s--; if(cdState.s<0){cdState.s=59;cdState.m--;} if(cdState.m<0){cdState.m=59;cdState.h--;} if(cdState.h<0){cdState.h=23;cdState.d--;} if(cdState.d<0){cdState.d=30;cdState.h=23;cdState.m=59;cdState.s=59;} renderCountdown(); },1000);
+renderCountdown();
+
+// =============================================
+// TABS
+// =============================================
+const tabsEl=document.getElementById('tabs');
+tabsEl.innerHTML = ''; 
+['Featured','Best Seller','Top Rated'].forEach(t=>{
+  const b=document.createElement('button');
+  b.className='px-5 py-2 text-sm font-semibold rounded-full transition '+(t===activeTab?'bg-black text-white':'text-gray-700 hover:text-black');
+  b.textContent=t;
+  b.onclick=()=>{ activeTab=t; Array.from(tabsEl.children).forEach(c=>c.className='px-5 py-2 text-sm font-semibold rounded-full transition '+(c.textContent===t?'bg-black text-white':'text-gray-700 hover:text-black')); renderProducts(); };
+  tabsEl.appendChild(b);
+});
+
+// =============================================
+// DATA
+// =============================================
+async function loadProducts(){
+  const { data, error } = await sb.from('produtos').select('*').eq('active',true).order('name');
+  if(error){ console.error(error); return; }
+  PRODUCTS=data.map(p=>({id:p.id,name:p.name,price:parseFloat(p.price),category:p.category,sku:p.sku,desc:p.description,badge:p.badge,image:p.image}));
+}
+async function loadCart(){
+  const { data } = await sb.from('carrinho').select('produto_id, quantidade').eq('session_id',SESSION_ID);
+  CART=(data||[]).map(r=>({id:r.produto_id,qty:r.quantidade}));
+}
+async function loadslides(){
+ const { data: slides, error } = await sb.from('slides').select('*').order('order', { ascending: true });
+ if(error){ console.error(error); return; }
+ return slides;}
+
+// =============================================
+// RENDERS
+// =============================================
+function stars(v=4){
+  let h='<div class="flex items-center gap-0.5">';
+  for(let i=1;i<=5;i++) h+=`<svg class="w-3 h-3 ${i<=Math.round(v)?'fill-orange-500 text-orange-500':'text-gray-300'}" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>`;
+  h+='<span class="ml-1 text-xs text-gray-500">(5)</span></div>'; return h;
+}
+function renderCategoryChips(){
+  const cats=[...new Set(PRODUCTS.map(p=>p.category).filter(Boolean))];
+  const el=document.getElementById('category-chips'); el.innerHTML='';
+  const all=document.createElement('button'); all.textContent='TODOS';
+  all.className='px-4 py-2 rounded-full text-xs font-bold tracking-wider border transition '+(activeCategory===null?'bg-orange-500 text-white border-orange-500':'bg-white text-gray-700 border-gray-300 hover:border-orange-500 hover:text-orange-500');
+  all.onclick=()=>{ activeCategory=null; renderCategoryChips(); renderProducts(); };
+  el.appendChild(all);
+  cats.forEach(c=>{
+    const b=document.createElement('button'); b.textContent=c.toUpperCase();
+    b.className='px-4 py-2 rounded-full text-xs font-bold tracking-wider border transition '+(activeCategory===c?'bg-orange-500 text-white border-orange-500':'bg-white text-gray-700 border-gray-300 hover:border-orange-500 hover:text-orange-500');
+    b.onclick=()=>{ activeCategory=activeCategory===c?null:c; renderCategoryChips(); renderProducts(); };
+    el.appendChild(b);
+  });
+}
+function getFiltered(){
+  const q=(query||'').toLowerCase().trim();
+  let list=PRODUCTS;
+  if(activeCategory) list=list.filter(p=>p.category===activeCategory);
+  if(q) list=list.filter(p=>(p.name+' '+(p.desc||'')+' '+(p.sku||'')).toLowerCase().includes(q));
+  return list;
+}
+function renderProducts(){
+  document.getElementById('products-loading').classList.add('hidden');
+  let list=getFiltered();
+  if(activeTab==='Featured') list=list.slice(0,5);
+  else if(activeTab==='Best Seller') list=[...list].sort((a,b)=>b.price-a.price).slice(0,5);
+  else list=[...list].sort((a,b)=>a.price-b.price).slice(0,5);
+  const grid=document.getElementById('product-grid'); const empty=document.getElementById('products-empty');
+  if(list.length===0){ grid.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  grid.innerHTML=list.map(p=>`
+    <div class="product-card bg-gray-50 rounded-lg p-5 flex flex-col">
+      <div class="h-44 flex items-center justify-center mb-4 cursor-pointer" onclick="openProduct('${p.id}')">
+        ${p.image?`<img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain" />`:`<div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center text-gray-500 font-bold">${p.name.split(' ')[0]}</div>`}
+      </div>
+      <button onclick="setCategory('${p.category||''}')" class="text-xs text-orange-500 underline font-medium mb-1 text-left hover:text-orange-600">${p.category||'Categoria'}</button>
+      <h3 onclick="openProduct('${p.id}')" class="font-semibold text-sm text-gray-900 leading-snug mb-2 min-h-[40px] cursor-pointer hover:text-orange-600">${p.name}</h3>
+      ${stars(4)}
+      <div class="mt-3 flex items-center justify-between">
+        <span class="text-lg font-bold">€${p.price.toFixed(2)}</span>
+        <button onclick="addToCart('${p.id}',1)" class="btn-accent text-xs px-3 py-2 rounded-md">ADD</button>
+      </div>
+    </div>`).join('');
+  renderDeals();
+  if(window.lucide) lucide.createIcons();
+}
+function renderDeals(){
+  const dealsEl=document.getElementById('deals-grid');
+  const list=getFiltered().slice(0,4);
+  if(list.length===0){ dealsEl.innerHTML='<div class="col-span-2 text-gray-400 text-sm italic">Sem deals disponíveis.</div>'; return; }
+  dealsEl.innerHTML=list.map(p=>`
+    <div class="bg-white text-gray-900 rounded-lg p-3 flex items-center gap-3">
+      <div class="w-20 h-20 bg-gray-100 rounded shrink-0 flex items-center justify-center overflow-hidden">
+        ${p.image?`<img src="${p.image}" class="max-h-full max-w-full object-contain" />`:`<span class="text-xs text-gray-500 font-bold">${p.name.split(' ')[0]}</span>`}
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="text-sm font-semibold line-clamp-2">${p.name}</div>
+        ${stars(4)}
+        <div class="font-bold mt-1">€${p.price.toFixed(2)}</div>
+      </div>
+      <button onclick="addToCart('${p.id}',1)" class="btn-accent text-[10px] px-3 py-2 rounded-md shrink-0">ADD</button>
+    </div>`).join('');
+}
+function setCategory(c){ activeCategory=c||null; renderCategoryChips(); renderProducts(); window.scrollTo({top:document.getElementById('products').offsetTop-80,behavior:'smooth'}); }
+
+// =============================================
+// CART
+// =============================================
+async function saveCartItem(id,qty){
+  if(qty<=0) await sb.from('carrinho').delete().eq('session_id',SESSION_ID).eq('produto_id',id);
+  else await sb.from('carrinho').upsert({session_id:SESSION_ID,produto_id:id,quantidade:qty,updated_at:new Date().toISOString()},{onConflict:'session_id,produto_id'});
+}
+async function addToCart(id,qty=1){
+  const i=CART.findIndex(x=>x.id===id);
+  if(i===-1){ CART.push({id,qty}); await saveCartItem(id,qty); } else { CART[i].qty+=qty; await saveCartItem(id,CART[i].qty); }
+  refreshCartUI(); toggleCart(true);
+}
+async function changeQty(id,delta){
+  const it=CART.find(x=>x.id===id); if(!it) return;
+  it.qty=Math.max(0,it.qty+delta);
+  if(it.qty===0) CART=CART.filter(x=>x.id!==id);
+  await saveCartItem(id,it.qty); refreshCartUI();
+}
+async function clearCart(){ await sb.from('carrinho').delete().eq('session_id',SESSION_ID); CART=[]; refreshCartUI(); }
+function cartTotal(){ return CART.reduce((s,i)=>{const p=PRODUCTS.find(x=>x.id===i.id);return s+(p?p.price*i.qty:0);},0); }
+function refreshCartUI(){
+  const count=CART.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cart-count').textContent=count;
+  document.getElementById('cart-count-2').textContent=count;
+  const el=document.getElementById('cart-items');
+  if(CART.length===0){ el.innerHTML='<div class="text-center text-gray-500 py-12">O carrinho está vazio.</div>'; }
+  else {
+    el.innerHTML=CART.map(it=>{
+      const p=PRODUCTS.find(x=>x.id===it.id); if(!p) return '';
+      return `<div class="flex gap-3 items-center border rounded-lg p-3">
+        <div class="w-16 h-16 bg-gray-100 rounded flex items-center justify-center overflow-hidden shrink-0">
+          ${p.image?`<img src="${p.image}" class="max-h-full max-w-full object-contain" />`:`<span class="text-xs">${p.name.split(' ')[0]}</span>`}
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-sm line-clamp-2">${p.name}</div>
+          <div class="text-orange-500 font-bold text-sm">€${p.price.toFixed(2)}</div>
+        </div>
+        <div class="flex items-center gap-1 border rounded">
+          <button onclick="changeQty('${it.id}',-1)" class="p-1.5 hover:bg-gray-100"><i data-lucide="minus" class="w-3 h-3"></i></button>
+          <span class="text-sm w-6 text-center">${it.qty}</span>
+          <button onclick="changeQty('${it.id}',1)" class="p-1.5 hover:bg-gray-100"><i data-lucide="plus" class="w-3 h-3"></i></button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('cart-total').textContent='€'+cartTotal().toFixed(2);
+  if(window.lucide) lucide.createIcons();
+}
+function toggleCart(open){ document.getElementById('cart-drawer').classList.toggle('hidden',!open); }
+document.getElementById('open-cart').onclick=()=>toggleCart(true);
+document.getElementById('clear-cart-btn').onclick=()=>clearCart();
+
+// =============================================
+// PRODUCT MODAL
+// =============================================
+let modalQty=1;
+function openProduct(id){
+  const p=PRODUCTS.find(x=>x.id===id); if(!p) return;
+  modalQty=1;
+  const m=document.getElementById('product-modal'); m.classList.remove('hidden');
+  m.innerHTML = `
+    <div class="bg-white w-full max-w-4xl rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2" onclick="event.stopPropagation()">
+      <div class="bg-gray-50 flex items-center justify-center p-8 h-80 md:h-auto">
+        ${p.image?`<img src="${p.image}" class="max-h-full max-w-full object-contain" />`:`<div class="text-5xl font-display font-bold text-gray-300">${p.name.split(' ')[0]}</div>`}
+      </div>
+      <div class="p-8 flex flex-col">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <button onclick="setCategory('${p.category||''}');closeProduct()" class="text-orange-500 text-xs underline font-medium tracking-wide hover:text-orange-600">${p.category||'Categoria'}</button>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mt-1 leading-tight">${p.name}</h2>
+          </div>
+          <button onclick="closeProduct()" class="text-gray-400 hover:text-black shrink-0"><i data-lucide="x" class="w-[22px] h-[22px]"></i></button>
+        </div>
+        <div class="flex items-center gap-2 mb-4">${stars(4)}${p.sku?`<span class="ml-2 text-xs bg-gray-100 px-2 py-1 rounded font-mono text-gray-600">SKU: ${p.sku}</span>`:''}</div>
+        <div class="text-3xl font-bold text-orange-500 mb-4">€${p.price.toFixed(2)}</div>
+        ${p.badge?`<div class="inline-block self-start bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-4">${p.badge}</div>`:''}
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">${p.desc||'Produto selecionado da gama GymFuel — qualidade premium.'}</p>
+        <div class="flex items-center gap-4 mb-5">
+          <span class="text-sm font-semibold text-gray-700">Quantidade:</span>
+          <div class="flex items-center border-2 border-gray-200 rounded-lg overflow-hidden">
+            <button onclick="modalQtyChange(-1)" class="px-3 py-2 hover:bg-gray-100"><i data-lucide="minus" class="w-4 h-4"></i></button>
+            <input id="modal-qty-input" type="number" min="1" value="1" class="w-14 text-center font-bold focus:outline-none" oninput="modalQty=Math.max(1,parseInt(this.value)||1)" />
+            <button onclick="modalQtyChange(1)" class="px-3 py-2 hover:bg-gray-100"><i data-lucide="plus" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <button onclick="addToCart('${p.id}',modalQty);closeProduct()" class="btn-accent flex-1 py-3.5 rounded-md text-sm">ADICIONAR AO CARRINHO</button>
+          <button class="px-5 py-3.5 border-2 border-gray-200 rounded-md text-sm font-semibold hover:border-gray-400"><i data-lucide="heart" class="w-[18px] h-[18px]"></i></button>
+        </div>
+      </div>
+    </div>`;
+  m.onclick=(e)=>{ if(e.target===m) closeProduct(); };
+  if(window.lucide) lucide.createIcons();
+}
+function modalQtyChange(d){ modalQty=Math.max(1,modalQty+d); const i=document.getElementById('modal-qty-input'); if(i) i.value=modalQty; }
+function closeProduct(){ document.getElementById('product-modal').classList.add('hidden'); }
+
+// =============================================
+// AUTH
+// =============================================
+let authMode='signin';
+function renderAuthArea(){
+  const el=document.getElementById('auth-area');
+  if(USER){
+    const name=USER.user_metadata?.name || USER.email;
+    el.innerHTML=`
+      <div class="flex items-center gap-3">
+        <div class="hidden md:flex items-center gap-2 text-sm"><i data-lucide="user" class="w-[18px] h-[18px]"></i><span class="truncate max-w-[120px]">${name}</span></div>
+        <button onclick="doLogout()" title="Terminar sessão" class="hover:text-orange-400"><i data-lucide="log-out" class="w-[18px] h-[18px]"></i></button>
+      </div>`;
+  } else {
+    el.innerHTML=`<button onclick="openAuth('signin')" class="flex items-center gap-2 text-sm hover:text-orange-400"><i data-lucide="user" class="w-5 h-5"></i><span class="hidden md:inline">Sign In / Register</span></button>`;
+  }
+  if(window.lucide) lucide.createIcons();
+}
+function openAuth(mode){ authMode=mode; updateAuthTabs(); document.getElementById('auth-modal').classList.remove('hidden'); }
+function closeAuth(){ document.getElementById('auth-modal').classList.add('hidden'); document.getElementById('auth-error').classList.add('hidden'); }
+function updateAuthTabs(){
+  document.getElementById('tab-signin').className='flex-1 py-4 font-display tracking-wider '+(authMode==='signin'?'bg-black text-white':'bg-white text-gray-600');
+  document.getElementById('tab-signup').className='flex-1 py-4 font-display tracking-wider '+(authMode==='signup'?'bg-black text-white':'bg-white text-gray-600');
+  document.getElementById('auth-name-wrap').classList.toggle('hidden',authMode!=='signup');
+  document.getElementById('auth-submit').textContent=(authMode==='signin'?'ENTRAR':'CRIAR CONTA');
+  const s=document.getElementById('auth-switch');
+  s.innerHTML = authMode==='signin' ? 'Não tens conta? <button type="button" class="text-orange-500 underline font-semibold" onclick="authMode=\'signup\';updateAuthTabs();">Regista-te</button>' : 'Já tens conta? <button type="button" class="text-orange-500 underline font-semibold" onclick="authMode=\'signin\';updateAuthTabs();">Entra</button>';
+  if(window.lucide) lucide.createIcons();
+}
+document.getElementById('tab-signin').onclick=()=>{ authMode='signin'; updateAuthTabs(); };
+document.getElementById('tab-signup').onclick=()=>{ authMode='signup'; updateAuthTabs(); };
+document.getElementById('auth-modal').onclick=(e)=>{ if(e.target.id==='auth-modal') closeAuth(); };
+
+document.getElementById('auth-form').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const errEl=document.getElementById('auth-error'); errEl.classList.add('hidden');
+  const btn=document.getElementById('auth-submit'); btn.disabled=true; btn.textContent='A processar...';
+  const form=new FormData(e.target);
+  const email=form.get('email'), password=form.get('password'), name=form.get('name');
+  try{
+   if(authMode==='signup'){
+  const { data:sign, error } = await sb.auth.signUp({email,password,options:{data:{name}}});
+  if(error) throw error;
+  // Garante que o perfil existe (caso o trigger falhe ou não esteja criado)
+  if(sign?.user?.id){
+    await sb.from('utilizadores').upsert({
+      id: sign.user.id,
+      nome: name || '',
+      email: email
+    }, { onConflict: 'id' });
+  }
+  alert('✅ Conta criada! Se a confirmação por email estiver ativa, verifica o teu email.');
+} else {
+      const { error } = await sb.auth.signInWithPassword({email,password});
+      if(error) throw error;
+    }
+    closeAuth();
+  } catch(err){
+    errEl.textContent=err.message||'Erro de autenticação'; errEl.classList.remove('hidden');
+  } finally {
+    btn.disabled=false; btn.textContent=(authMode==='signin'?'ENTRAR':'CRIAR CONTA');
+  }
+});
+async function doLogout(){ await sb.auth.signOut(); USER=null; USER_PROFILE=null; renderAuthArea(); }
+
+let USER_PROFILE = null;
+async function loadUserProfile(){
+  if(!USER){ USER_PROFILE=null; return; }
+  const { data } = await sb.from('utilizadores').select('*').eq('id', USER.id).maybeSingle();
+  USER_PROFILE = data || null;
+  // pré-preenche checkoutInfo
+  if(USER_PROFILE){
+    checkoutInfo = {
+      nome:          USER_PROFILE.nome          || checkoutInfo.nome,
+      email:         USER_PROFILE.email         || checkoutInfo.email || USER.email,
+      morada:        USER_PROFILE.morada        || checkoutInfo.morada,
+      cidade:        USER_PROFILE.cidade        || checkoutInfo.cidade,
+      codigo:        USER_PROFILE.codigo_postal || checkoutInfo.codigo,
+    };
+  }
+}
+
+// =============================================
+// CHECKOUT (multi-step)
+// =============================================
+let checkoutInfo={nome:'',email:'',morada:'',cidade:'',codigo:''};
+let paymentMethod='paypal';
+let checkoutStep=1;
+let orderCreated=null;
+let ibanCopied=false;
+
+function toggleCheckout(open){
+  const m=document.getElementById('checkout-modal');
+  m.classList.toggle('hidden',!open);
+  if(open){ checkoutStep=1; orderCreated=null; renderCheckout(); }
+}
+document.getElementById('checkout-btn').onclick=()=>{
+  if(CART.length===0){ alert('O carrinho está vazio.'); return; }
+  toggleCart(false); toggleCheckout(true);
+};
+function renderCheckout(){
+  const title={1:'DADOS DE ENVIO',2:'MÉTODO DE PAGAMENTO',3:'ENCOMENDA CONFIRMADA'}[checkoutStep];
+  document.getElementById('checkout-title').textContent=title;
+  document.getElementById('checkout-steps').classList.toggle('hidden',checkoutStep===3);
+  document.getElementById('step-1').className=(checkoutStep>=1?'text-orange-500':'text-gray-400');
+  document.getElementById('step-2').className=(checkoutStep>=2?'text-orange-500':'text-gray-400');
+  document.getElementById('step-3').className=(checkoutStep>=3?'text-orange-500':'text-gray-400');
+  const body=document.getElementById('checkout-body');
+  const total=cartTotal();
+
+  if(checkoutStep===1){
+    body.innerHTML=`
+      <form id="step1-form" class="p-6 space-y-3">
+        <div class="grid grid-cols-2 gap-3">
+          <input name="nome" value="${checkoutInfo.nome||(USER?.user_metadata?.name||'')}" placeholder="Nome completo" required class="col-span-2 border rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-orange-500 outline-none" />
+          <input name="email" value="${checkoutInfo.email||(USER?.email||'')}" type="email" placeholder="Email" required class="col-span-2 border rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-orange-500 outline-none" />
+          <input name="morada" value="${checkoutInfo.morada}" placeholder="Morada" required class="col-span-2 border rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-orange-500 outline-none" />
+          <input name="cidade" value="${checkoutInfo.cidade}" placeholder="Cidade" required class="border rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-orange-500 outline-none" />
+          <input name="codigo" value="${checkoutInfo.codigo}" placeholder="Código postal" required class="border rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-orange-500 outline-none" />
+        </div>
+        <div class="flex justify-between items-center pt-2"><span class="text-gray-600 text-sm">Total:</span><span class="text-xl font-bold">€${total.toFixed(2)}</span></div>
+        <button type="submit" class="btn-accent w-full py-3 rounded">CONTINUAR PARA PAGAMENTO →</button>
+      </form>`;
+    document.getElementById('step1-form').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const f=new FormData(e.target);
+      checkoutInfo={nome:f.get('nome'),email:f.get('email'),morada:f.get('morada'),cidade:f.get('cidade'),codigo:f.get('codigo')};
+      checkoutStep=2; renderCheckout();
+    });
+  } else if(checkoutStep===2){
+    body.innerHTML=`
+      <div class="p-6 space-y-4">
+        <div class="bg-gray-50 rounded-lg p-4 text-sm">
+          <div class="font-semibold mb-2">Resumo da encomenda</div>
+          <div class="text-gray-600">${checkoutInfo.nome} — ${checkoutInfo.email}</div>
+          <div class="text-gray-600">${checkoutInfo.morada}, ${checkoutInfo.cidade} ${checkoutInfo.codigo}</div>
+          <div class="flex justify-between mt-3 pt-3 border-t"><span class="font-semibold">Total a pagar:</span><span class="font-bold text-lg text-orange-500">€${total.toFixed(2)}</span></div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="selectPayment('paypal')" class="p-4 border-2 rounded-lg flex flex-col items-center gap-2 transition ${paymentMethod==='paypal'?'border-orange-500 bg-orange-50':'border-gray-200 hover:border-gray-400'}">
+            <i data-lucide="credit-card" class="w-6 h-6 ${paymentMethod==='paypal'?'text-orange-500':'text-gray-600'}"></i>
+            <span class="font-semibold text-sm">PayPal / Cartão</span>
+          </button>
+          <button onclick="selectPayment('manual')" class="p-4 border-2 rounded-lg flex flex-col items-center gap-2 transition ${paymentMethod==='manual'?'border-orange-500 bg-orange-50':'border-gray-200 hover:border-gray-400'}">
+            <i data-lucide="landmark" class="w-6 h-6 ${paymentMethod==='manual'?'text-orange-500':'text-gray-600'}"></i>
+            <span class="font-semibold text-sm">Transferência Bancária</span>
+          </button>
+        </div>
+        <div id="payment-area"></div>
+        <div class="flex justify-between pt-2"><button onclick="checkoutStep=1;renderCheckout()" class="text-sm text-gray-600 hover:text-black">← Voltar</button></div>
+      </div>`;
+    renderPaymentArea();
+    if(window.lucide) lucide.createIcons();
+  } else if(checkoutStep===3 && orderCreated){
+    body.innerHTML=`
+      <div class="p-8 text-center space-y-4">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto"><i data-lucide="check" class="w-9 h-9 text-green-600"></i></div>
+        <h3 class="font-display text-2xl font-bold">Encomenda confirmada!</h3>
+        <div class="text-gray-600 text-sm">Número de encomenda: <code class="bg-gray-100 px-2 py-1 rounded font-mono">#${orderCreated.id.slice(0,8)}</code></div>
+        <div class="text-3xl font-bold text-orange-500">€${orderCreated.total.toFixed(2)}</div>
+        ${orderCreated.method==='paypal'
+          ? `<div class="text-sm text-green-700 bg-green-50 border border-green-200 rounded p-3">✅ Pagamento recebido via PayPal. ${orderCreated.payment_id?('ID: '+orderCreated.payment_id):''}</div>`
+          : `<div class="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded p-3 text-left">⏳ Aguardamos a tua transferência para o IBAN <b>${BANK_IBAN}</b>. Indica no descritivo: <code>GymFuel #${orderCreated.id.slice(0,8)}</code></div>`
+        }
+        <button onclick="toggleCheckout(false)" class="btn-accent w-full py-3 rounded mt-4">CONTINUAR A COMPRAR</button>
+      </div>`;
+    if(window.lucide) lucide.createIcons();
+  }
+}
+function selectPayment(m){ paymentMethod=m; renderCheckout(); }
+function renderPaymentArea(){
+  const area=document.getElementById('payment-area');
+  if(paymentMethod==='paypal'){
+    if(!PAYPAL_CLIENT_ID){
+      area.innerHTML=`<div class="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded p-3">⚠️ PayPal ainda não está configurado. Edita a variável <code class="bg-amber-100 px-1 rounded">PAYPAL_CLIENT_ID</code> no topo deste ficheiro HTML. Entretanto, usa "Transferência Bancária".</div>`;
+    } else {
+      area.innerHTML=`<div id="paypal-button-container" class="border rounded-lg p-4 bg-white"></div>`;
+      loadPayPal();
+    }
+  } else {
+    area.innerHTML=`
+      <div class="border rounded-lg p-4 bg-white space-y-3">
+        <div class="text-sm text-gray-700">Efetua a transferência para o IBAN abaixo. Após receção do valor, a encomenda é processada.</div>
+        <div class="bg-gray-50 border rounded p-3">
+          <div class="text-xs text-gray-500 mb-1">Titular</div>
+          <div class="font-semibold">${BANK_HOLDER}</div>
+          <div class="text-xs text-gray-500 mt-3 mb-1">IBAN</div>
+          <div class="flex items-center gap-2">
+            <code class="flex-1 font-mono text-sm bg-white border rounded px-2 py-1.5">${BANK_IBAN}</code>
+            <button onclick="copyIban()" class="px-3 py-1.5 border rounded text-xs font-semibold hover:bg-gray-100 flex items-center gap-1" id="copy-btn">
+              ${ibanCopied?'<i data-lucide="check" class="w-3.5 h-3.5"></i> Copiado':'<i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar'}
+            </button>
+          </div>
+          <div class="text-xs text-gray-500 mt-3 mb-1">Valor</div>
+          <div class="font-bold text-lg text-orange-500">€${cartTotal().toFixed(2)}</div>
+        </div>
+        <button onclick="confirmManualPayment()" class="btn-accent w-full py-3 rounded">CONFIRMAR ENCOMENDA (pagamento pendente)</button>
+      </div>`;
+    if(window.lucide) lucide.createIcons();
+  }
+}
+function copyIban(){
+  navigator.clipboard?.writeText(BANK_IBAN.replace(/\s+/g,''));
+  ibanCopied=true; renderPaymentArea();
+  setTimeout(()=>{ ibanCopied=false; if(checkoutStep===2 && paymentMethod==='manual') renderPaymentArea(); },1500);
+}
+
+async function createOrderInDb(){
+  const total=cartTotal();
+
+  // Se user autenticado, atualiza o perfil com os dados de envio
+  if(USER){
+    await sb.from('utilizadores').upsert({
+      id: USER.id,
+      nome: checkoutInfo.nome,
+      email: checkoutInfo.email,
+      morada: checkoutInfo.morada,
+      cidade: checkoutInfo.cidade,
+      codigo_postal: checkoutInfo.codigo,
+      updated_at: new Date().toISOString()
+    }, { onConflict: 'id' });
+  }
+
+  const { data:enc, error:encErr } = await sb.from('encomendas').insert({
+    nome:checkoutInfo.nome, email:checkoutInfo.email, morada:checkoutInfo.morada,
+    cidade:checkoutInfo.cidade, codigo_postal:checkoutInfo.codigo, total:total
+  }).select('id').single();
+  if(encErr) throw new Error(encErr.message);
+  const itens=CART.map(i=>{ const p=PRODUCTS.find(x=>x.id===i.id); return { encomenda_id:enc.id, produto_id:i.id, produto_nome:p?p.name:i.id, preco_unit:p?p.price:0, quantidade:i.qty }; });
+  const { error:itErr } = await sb.from('itens_encomenda').insert(itens);
+  if(itErr) throw new Error(itErr.message);
+  return { id:enc.id, total };
+}
+async function confirmManualPayment(){
+  try {
+    const enc = await createOrderInDb();
+    orderCreated={...enc, method:'manual'};
+    await clearCart(); checkoutStep=3; renderCheckout();
+  } catch(e){ alert('Erro: '+e.message); }
+}
+
+// PayPal loader (client-side only)
+let paypalLoaded=false;
+function loadPayPal(){
+  if(paypalLoaded && window.paypal){ renderPayPalButton(); return; }
+  if(document.getElementById('paypal-sdk')){ setTimeout(renderPayPalButton,300); return; }
+  const s=document.createElement('script');
+  s.id='paypal-sdk';
+  s.src=`https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(PAYPAL_CLIENT_ID)}&currency=${PAYPAL_CURRENCY}`;
+  s.onload=()=>{ paypalLoaded=true; renderPayPalButton(); };
+  document.body.appendChild(s);
+}
+function renderPayPalButton(){
+  const container=document.getElementById('paypal-button-container');
+  if(!container || !window.paypal) return;
+  container.innerHTML='';
+  window.paypal.Buttons({
+    style:{ layout:'vertical', color:'gold', shape:'rect', label:'paypal' },
+    createOrder:(data,actions)=>actions.order.create({
+      purchase_units:[{ amount:{ value:cartTotal().toFixed(2), currency_code:PAYPAL_CURRENCY }, description:'GymFuel — Encomenda' }]
+    }),
+    onApprove: async (data,actions)=>{
+      const details = await actions.order.capture();
+      try {
+        const enc = await createOrderInDb();
+        orderCreated={ ...enc, method:'paypal', payment_id:details.id };
+        await clearCart(); checkoutStep=3; renderCheckout();
+      } catch(e){ alert('Pagamento recebido mas houve erro a gravar a encomenda: '+e.message); }
+    },
+    onError:(err)=>{ console.error(err); alert('Erro PayPal: '+err.message); }
+  }).render('#paypal-button-container');
+}
+
+// =============================================
+// search
+// =============================================
+document.getElementById('search').addEventListener('input',(e)=>{ query=e.target.value; renderProducts(); });
+
+// =============================================
+// INIT
+// =============================================
+(async function init(){
+
+  // auth state
+  const { data: sess } = await sb.auth.getSession();
+USER = sess?.session?.user || null;
+await loadUserProfile();
+renderAuthArea();
+sb.auth.onAuthStateChange(async (_e,session)=>{
+  USER = session?.user || null;
+  await loadUserProfile();
+  renderAuthArea();
+});
+
+  await loadProducts();
+  await loadCart();
+  renderCategoryChips();
+  renderProducts();
+  refreshCartUI();
+})();
+</script>
+
+
+
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>
