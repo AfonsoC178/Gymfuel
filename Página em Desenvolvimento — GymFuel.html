@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Página em Desenvolvimento — GymFuel</title>
+<meta name="description" content="Esta página ainda está em desenvolvimento. Volta em breve!">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root { --accent:#0ac235; --accent-hover:#3120e9; --warning:#f5a800; }
+  html,body{margin:0;padding:0;font-family:'Inter',system-ui,sans-serif;background:#fff;}
+  .font-display{font-family:'Oswald','Inter',sans-serif;letter-spacing:.02em;}
+  .btn-accent{background:var(--accent);color:#fff;font-weight:700;letter-spacing:.08em;transition:background .2s;}
+  .btn-accent:hover{background:var(--accent-hover);}
+
+  /* Faixas amarelo+preto */
+  .hazard-stripes{
+    background-image:repeating-linear-gradient(
+      135deg,
+      var(--warning) 0 28px,
+      #000 28px 56px
+    );
+    height:120px;
+    animation:slide 4s linear infinite;
+    background-size:80px 80px;
+  }
+  @keyframes slide{
+    from{background-position:0 0;}
+    to{background-position:80px 0;}
+  }
+
+  /* Losango amarelo central */
+  .diamond{
+    width:280px;height:280px;
+    background:var(--warning);
+    transform:rotate(45deg);
+    border:6px solid #000;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    position:relative;
+    animation:wobble 3s ease-in-out infinite;
+  }
+  @keyframes wobble{
+    0%,100%{transform:rotate(45deg) translateY(0);}
+    50%{transform:rotate(45deg) translateY(-10px);}
+  }
+  .diamond-content{
+    position:absolute;inset:0;
+    transform:rotate(-45deg);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    text-align:center;color:#000;
+    font-family:'Oswald',sans-serif;
+  }
+
+  /* pulse no botão */
+  .pulse-dot{
+    width:10px;height:10px;border-radius:50%;background:var(--warning);
+    box-shadow:0 0 0 0 rgba(245,168,0,.7);
+    animation:pulse 1.5s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(245,168,0,.7);}
+    70%{box-shadow:0 0 0 14px rgba(245,168,0,0);}
+    100%{box-shadow:0 0 0 0 rgba(245,168,0,0);}
+  }
+</style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+<!-- HEADER simplificado (mesma identidade visual GymFuel) -->
+<header class="bg-black text-white">
+  <div class="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center shrink-0" data-testid="logo-home-link">
+      <span class="font-display text-3xl font-bold tracking-wider">Gym<span class="text-blue-500">Fuel</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 font-display text-sm tracking-widest">
+      <a href="/" class="hover:text-orange-400" data-testid="nav-home">PÁGINA INICIAL</a>
+      <a href="/#products" class="hover:text-orange-400" data-testid="nav-shop">LOJA</a>
+      <a href="/Contactos.html" class="hover:text-orange-400" data-testid="nav-contact">CONTACTO</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ZONA EM DESENVOLVIMENTO -->
+<main class="relative min-h-[80vh] flex flex-col items-center justify-center bg-white py-20 overflow-hidden">
+
+  <!-- Losango com texto -->
+  <div class="relative z-10 mb-8 flex items-center justify-center" data-testid="under-construction-sign">
+    <div class="diamond">
+      <div class="diamond-content px-4">
+        <div class="font-bold text-base md:text-lg leading-tight mb-3 px-6">
+          PÁGINA EM<br>DESENVOLVIMENTO
+        </div>
+        <!-- ícone telemóvel/ferramenta -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-black">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+        <div class="w-12 h-1.5 bg-black mt-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Faixa amarelo+preto (entre losango e texto) -->
+  <div class="hazard-stripes w-full -mt-24 mb-12 relative z-0"></div>
+
+  <!-- Texto explicativo (ABAIXO da faixa) -->
+  <div class="relative z-10 text-center max-w-2xl px-6">
+    <h1 class="font-display text-3xl md:text-5xl font-bold tracking-wider mb-4 text-orange-500">ESTAMOS A TRABALHAR NISTO</h1>
+    <p class="text-gray-600 text-base md:text-lg mb-2">Esta área do site ainda está em construção.</p>
+    <p class="text-gray-500 text-sm md:text-base mb-8">Volta em breve — vamos ter novidades fresquinhas para ti. 💪</p>
+
+    <div class="flex items-center justify-center gap-2 mb-8 text-xs text-gray-500 font-semibold tracking-widest">
+      <span class="pulse-dot"></span>
+      <span>EM PROGRESSO</span>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="/" data-testid="back-home-btn" class="btn-accent inline-block px-8 py-3.5 rounded-full text-sm">
+        ← VOLTAR AO INÍCIO
+      </a>
+      <a href="/#products" data-testid="go-shop-btn" class="inline-block px-8 py-3.5 rounded-full text-sm font-bold tracking-wider border-2 border-black text-black hover:bg-black hover:text-white transition">
+        VER PRODUTOS
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER mini -->
+<footer class="bg-black text-gray-400 text-center text-xs py-6">
+  © <span id="year"></span> GymFuel — Tudo para o teu treino.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
