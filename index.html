@@ -1598,13 +1598,9 @@
 const SUPABASE_URL='https://comrswwbipbmffyxvgyc.supabase.co';
 const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
 
-// PayPal — cola o teu Client ID (deixar vazio desativa o PayPal, fica só transferência)
-const PAYPAL_CLIENT_ID = '';  // exemplo: 'AXXXXXXXXXXXXXXXXXXXXXXXX'
-const PAYPAL_CURRENCY  = 'EUR';
-
-// Transferência Bancária — edita com os teus dados
-const BANK_HOLDER = 'GymFuel Lda.';
-const BANK_IBAN   = 'PT50 0000 0000 0000 0000 0000 0';
+// PayPal — REMOVIDO. Agora usamos Stripe (Edge Function no Supabase).
+// Endpoint da Edge Function: https://<project-ref>.supabase.co/functions/v1/stripe-checkout
+const STRIPE_FUNCTION_URL = SUPABASE_URL + '/functions/v1/stripe-checkout';
 
 // =============================================
 const { createClient } = supabase;
@@ -1926,13 +1922,12 @@ async function loadUserProfile(){
 }
 
 // =============================================
-// CHECKOUT (multi-step)
+// CHECKOUT (multi-step) — só Stripe
 // =============================================
 let checkoutInfo={nome:'',email:'',morada:'',cidade:'',codigo:''};
-let paymentMethod='paypal';
 let checkoutStep=1;
 let orderCreated=null;
-let ibanCopied=false;
+let stripeLoading=false;
 
 function toggleCheckout(open){
   const m=document.getElementById('checkout-modal');
@@ -1944,7 +1939,7 @@ document.getElementById('checkout-btn').onclick=()=>{
   toggleCart(false); toggleCheckout(true);
 };
 function renderCheckout(){
-  const title={1:'DADOS DE ENVIO',2:'MÉTODO DE PAGAMENTO',3:'ENCOMENDA CONFIRMADA'}[checkoutStep];
+  const title={1:'DADOS DE ENVIO',2:'PAGAMENTO SEGURO',3:'ENCOMENDA CONFIRMADA'}[checkoutStep];
   document.getElementById('checkout-title').textContent=title;
   document.getElementById('checkout-steps').classList.toggle('hidden',checkoutStep===3);
   document.getElementById('step-1').className=(checkoutStep>=1?'text-orange-500':'text-gray-400');
@@ -1979,142 +1974,208 @@ function renderCheckout(){
           <div class="font-semibold mb-2">Resumo da encomenda</div>
           <div class="text-gray-600">${checkoutInfo.nome} — ${checkoutInfo.email}</div>
           <div class="text-gray-600">${checkoutInfo.morada}, ${checkoutInfo.cidade} ${checkoutInfo.codigo}</div>
+          <div class="text-xs text-gray-500 mt-2">${CART.reduce((s,i)=>s+i.qty,0)} artigo(s) no carrinho</div>
           <div class="flex justify-between mt-3 pt-3 border-t"><span class="font-semibold">Total a pagar:</span><span class="font-bold text-lg text-orange-500">€${total.toFixed(2)}</span></div>
         </div>
-        <div class="grid grid-cols-2 gap-3">
-          <button onclick="selectPayment('paypal')" class="p-4 border-2 rounded-lg flex flex-col items-center gap-2 transition ${paymentMethod==='paypal'?'border-orange-500 bg-orange-50':'border-gray-200 hover:border-gray-400'}">
-            <i data-lucide="credit-card" class="w-6 h-6 ${paymentMethod==='paypal'?'text-orange-500':'text-gray-600'}"></i>
-            <span class="font-semibold text-sm">PayPal / Cartão</span>
-          </button>
-          <button onclick="selectPayment('manual')" class="p-4 border-2 rounded-lg flex flex-col items-center gap-2 transition ${paymentMethod==='manual'?'border-orange-500 bg-orange-50':'border-gray-200 hover:border-gray-400'}">
-            <i data-lucide="landmark" class="w-6 h-6 ${paymentMethod==='manual'?'text-orange-500':'text-gray-600'}"></i>
-            <span class="font-semibold text-sm">Transferência Bancária</span>
-          </button>
+
+        <div class="border-2 border-orange-500 bg-orange-50 rounded-lg p-4 flex items-center gap-3">
+          <i data-lucide="credit-card" class="w-8 h-8 text-orange-500 shrink-0"></i>
+          <div class="flex-1">
+            <div class="font-semibold text-sm">Pagamento seguro via Stripe</div>
+            <div class="text-xs text-gray-600">Cartão de crédito/débito · Apple Pay · Google Pay</div>
+          </div>
+          <div class="flex items-center gap-1 text-xs text-gray-500"><i data-lucide="lock" class="w-3.5 h-3.5"></i> SSL</div>
         </div>
-        <div id="payment-area"></div>
+
+        <div id="stripe-error" class="hidden text-red-700 bg-red-50 border border-red-200 rounded p-3 text-sm"></div>
+
+        <button id="stripe-pay-btn" onclick="startStripeCheckout()" class="btn-accent w-full py-3.5 rounded font-bold flex items-center justify-center gap-2">
+          <i data-lucide="lock" class="w-4 h-4"></i>
+          <span id="stripe-pay-label">PAGAR €${total.toFixed(2)} →</span>
+        </button>
+
+        <p class="text-[11px] text-center text-gray-500">Vais ser redirecionado para o ambiente seguro do Stripe. Não guardamos dados de cartão.</p>
+
         <div class="flex justify-between pt-2"><button onclick="checkoutStep=1;renderCheckout()" class="text-sm text-gray-600 hover:text-black">← Voltar</button></div>
       </div>`;
-    renderPaymentArea();
     if(window.lucide) lucide.createIcons();
   } else if(checkoutStep===3 && orderCreated){
     body.innerHTML=`
       <div class="p-8 text-center space-y-4">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto"><i data-lucide="check" class="w-9 h-9 text-green-600"></i></div>
         <h3 class="font-display text-2xl font-bold">Encomenda confirmada!</h3>
-        <div class="text-gray-600 text-sm">Número de encomenda: <code class="bg-gray-100 px-2 py-1 rounded font-mono">#${orderCreated.id.slice(0,8)}</code></div>
+        ${orderCreated.id?`<div class="text-gray-600 text-sm">Número de encomenda: <code class="bg-gray-100 px-2 py-1 rounded font-mono">#${orderCreated.id.slice(0,8)}</code></div>`:''}
         <div class="text-3xl font-bold text-orange-500">€${orderCreated.total.toFixed(2)}</div>
-        ${orderCreated.method==='paypal'
-          ? `<div class="text-sm text-green-700 bg-green-50 border border-green-200 rounded p-3">✅ Pagamento recebido via PayPal. ${orderCreated.payment_id?('ID: '+orderCreated.payment_id):''}</div>`
-          : `<div class="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded p-3 text-left">⏳ Aguardamos a tua transferência para o IBAN <b>${BANK_IBAN}</b>. Indica no descritivo: <code>GymFuel #${orderCreated.id.slice(0,8)}</code></div>`
-        }
-        <button onclick="toggleCheckout(false)" class="btn-accent w-full py-3 rounded mt-4">CONTINUAR A COMPRAR</button>
+        <div class="text-sm text-green-700 bg-green-50 border border-green-200 rounded p-3">✅ Pagamento recebido via Stripe. Vais receber o email de confirmação em breve.</div>
+        <button onclick="toggleCheckout(false);window.history.replaceState({},'',window.location.pathname)" class="btn-accent w-full py-3 rounded mt-4">CONTINUAR A COMPRAR</button>
       </div>`;
     if(window.lucide) lucide.createIcons();
   }
-}
-function selectPayment(m){ paymentMethod=m; renderCheckout(); }
-function renderPaymentArea(){
-  const area=document.getElementById('payment-area');
-  if(paymentMethod==='paypal'){
-    if(!PAYPAL_CLIENT_ID){
-      area.innerHTML=`<div class="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded p-3">⚠️ PayPal ainda não está configurado. Edita a variável <code class="bg-amber-100 px-1 rounded">PAYPAL_CLIENT_ID</code> no topo deste ficheiro HTML. Entretanto, usa "Transferência Bancária".</div>`;
-    } else {
-      area.innerHTML=`<div id="paypal-button-container" class="border rounded-lg p-4 bg-white"></div>`;
-      loadPayPal();
-    }
-  } else {
-    area.innerHTML=`
-      <div class="border rounded-lg p-4 bg-white space-y-3">
-        <div class="text-sm text-gray-700">Efetua a transferência para o IBAN abaixo. Após receção do valor, a encomenda é processada.</div>
-        <div class="bg-gray-50 border rounded p-3">
-          <div class="text-xs text-gray-500 mb-1">Titular</div>
-          <div class="font-semibold">${BANK_HOLDER}</div>
-          <div class="text-xs text-gray-500 mt-3 mb-1">IBAN</div>
-          <div class="flex items-center gap-2">
-            <code class="flex-1 font-mono text-sm bg-white border rounded px-2 py-1.5">${BANK_IBAN}</code>
-            <button onclick="copyIban()" class="px-3 py-1.5 border rounded text-xs font-semibold hover:bg-gray-100 flex items-center gap-1" id="copy-btn">
-              ${ibanCopied?'<i data-lucide="check" class="w-3.5 h-3.5"></i> Copiado':'<i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar'}
-            </button>
-          </div>
-          <div class="text-xs text-gray-500 mt-3 mb-1">Valor</div>
-          <div class="font-bold text-lg text-orange-500">€${cartTotal().toFixed(2)}</div>
-        </div>
-        <button onclick="confirmManualPayment()" class="btn-accent w-full py-3 rounded">CONFIRMAR ENCOMENDA (pagamento pendente)</button>
-      </div>`;
-    if(window.lucide) lucide.createIcons();
-  }
-}
-function copyIban(){
-  navigator.clipboard?.writeText(BANK_IBAN.replace(/\s+/g,''));
-  ibanCopied=true; renderPaymentArea();
-  setTimeout(()=>{ ibanCopied=false; if(checkoutStep===2 && paymentMethod==='manual') renderPaymentArea(); },1500);
 }
 
-async function createOrderInDb(){
-  const total=cartTotal();
+// =============================================
+// STRIPE CHECKOUT (via Edge Function)
+// =============================================
+async function startStripeCheckout(){
+  if(stripeLoading) return;
+  const btn=document.getElementById('stripe-pay-btn');
+  const errEl=document.getElementById('stripe-error');
+  errEl.classList.add('hidden');
+  stripeLoading=true;
+  btn.disabled=true;
+  document.getElementById('stripe-pay-label').textContent='A criar sessão de pagamento...';
+
+  try {
+    // Guarda os dados de envio localmente para usar quando voltar do Stripe
+    sessionStorage.setItem('gymfuel_pending_checkout', JSON.stringify({
+      info: checkoutInfo,
+      cart: CART,
+      ts: Date.now()
+    }));
+
+    const res = await fetch(STRIPE_FUNCTION_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+      },
+      body: JSON.stringify({
+        items: CART.map(i=>({id:i.id, qty:i.qty})),
+        origin: window.location.origin,
+        customer_email: checkoutInfo.email,
+        shipping: checkoutInfo,
+      }),
+    });
+
+    const data = await res.json();
+    if(!res.ok || !data.url){
+      throw new Error(data.error || 'Não foi possível criar a sessão de pagamento');
+    }
+
+    // Redireciona para o Stripe Checkout
+    window.location.href = data.url;
+  } catch(err) {
+    console.error(err);
+    errEl.textContent = '❌ '+err.message;
+    errEl.classList.remove('hidden');
+    stripeLoading=false;
+    btn.disabled=false;
+    document.getElementById('stripe-pay-label').textContent=`PAGAR €${cartTotal().toFixed(2)} →`;
+  }
+}
+
+// =============================================
+// CRIAR ENCOMENDA NA BD (após pagamento confirmado)
+// =============================================
+async function createOrderInDb(info, cart, sessionData){
+  const total = (sessionData?.amount_total || 0) / 100;
 
   // Se user autenticado, atualiza o perfil com os dados de envio
   if(USER){
     await sb.from('utilizadores').upsert({
       id: USER.id,
-      nome: checkoutInfo.nome,
-      email: checkoutInfo.email,
-      morada: checkoutInfo.morada,
-      cidade: checkoutInfo.cidade,
-      codigo_postal: checkoutInfo.codigo,
+      nome: info.nome,
+      email: info.email,
+      morada: info.morada,
+      cidade: info.cidade,
+      codigo_postal: info.codigo,
       updated_at: new Date().toISOString()
     }, { onConflict: 'id' });
   }
 
   const { data:enc, error:encErr } = await sb.from('encomendas').insert({
-    nome:checkoutInfo.nome, email:checkoutInfo.email, morada:checkoutInfo.morada,
-    cidade:checkoutInfo.cidade, codigo_postal:checkoutInfo.codigo, total:total
+    nome:info.nome, email:info.email, morada:info.morada,
+    cidade:info.cidade, codigo_postal:info.codigo, total:total
   }).select('id').single();
   if(encErr) throw new Error(encErr.message);
-  const itens=CART.map(i=>{ const p=PRODUCTS.find(x=>x.id===i.id); return { encomenda_id:enc.id, produto_id:i.id, produto_nome:p?p.name:i.id, preco_unit:p?p.price:0, quantidade:i.qty }; });
+
+  const itens=cart.map(i=>{
+    const p=PRODUCTS.find(x=>x.id===i.id);
+    return { encomenda_id:enc.id, produto_id:i.id, produto_nome:p?p.name:i.id, preco_unit:p?p.price:0, quantidade:i.qty };
+  });
   const { error:itErr } = await sb.from('itens_encomenda').insert(itens);
   if(itErr) throw new Error(itErr.message);
   return { id:enc.id, total };
 }
-async function confirmManualPayment(){
-  try {
-    const enc = await createOrderInDb();
-    orderCreated={...enc, method:'manual'};
-    await clearCart(); checkoutStep=3; renderCheckout();
-  } catch(e){ alert('Erro: '+e.message); }
+
+// =============================================
+// RETORNO DO STRIPE (success_url tem ?stripe_session_id=...)
+// =============================================
+async function handleStripeReturn(){
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('stripe_session_id');
+  const cancelled = params.get('stripe_cancelled');
+
+  if(cancelled){
+    alert('Pagamento cancelado. Os teus produtos continuam no carrinho.');
+    window.history.replaceState({}, '', window.location.pathname);
+    return;
+  }
+  if(!sessionId) return;
+
+  // Faz polling do estado da sessão (até 5 tentativas, 2s entre cada)
+  toggleCheckout(true);
+  checkoutStep = 3;
+  document.getElementById('checkout-body').innerHTML = `
+    <div class="p-10 text-center space-y-3">
+      <div class="w-12 h-12 mx-auto rounded-full border-4 border-orange-200 border-t-orange-500 animate-spin"></div>
+      <div class="font-semibold">A confirmar o pagamento…</div>
+      <div class="text-xs text-gray-500">Não fechar esta janela.</div>
+    </div>`;
+
+  let attempts = 0;
+  const maxAttempts = 6;
+  while(attempts < maxAttempts){
+    try {
+      const res = await fetch(`${STRIPE_FUNCTION_URL}?session_id=${encodeURIComponent(sessionId)}`, {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+      });
+      const data = await res.json();
+      if(data.payment_status === 'paid'){
+        // Pagamento confirmado — gravar encomenda na BD
+        const pending = JSON.parse(sessionStorage.getItem('gymfuel_pending_checkout') || '{}');
+        const info = pending.info || { nome:'', email:data.customer_email||'', morada:'', cidade:'', codigo:'' };
+        const cart = pending.cart || CART;
+        try {
+          const enc = await createOrderInDb(info, cart, data);
+          orderCreated = { ...enc };
+        } catch(e){
+          console.error('Erro a gravar encomenda:', e);
+          orderCreated = { id:sessionId, total:(data.amount_total||0)/100 };
+        }
+        // Limpa o carrinho e estado pendente
+        try { await clearCart(); } catch(e) {}
+        sessionStorage.removeItem('gymfuel_pending_checkout');
+        window.history.replaceState({}, '', window.location.pathname);
+        renderCheckout();
+        return;
+      }
+      if(data.status === 'expired'){
+        document.getElementById('checkout-body').innerHTML = `
+          <div class="p-8 text-center space-y-3">
+            <div class="text-red-600 font-semibold">Sessão expirada</div>
+            <p class="text-sm text-gray-600">A sessão de pagamento expirou. Por favor tenta novamente.</p>
+            <button onclick="toggleCheckout(false);window.history.replaceState({},'',window.location.pathname)" class="btn-accent w-full py-3 rounded">FECHAR</button>
+          </div>`;
+        return;
+      }
+    } catch(err) {
+      console.error('polling error:', err);
+    }
+    attempts++;
+    await new Promise(r=>setTimeout(r, 2000));
+  }
+
+  document.getElementById('checkout-body').innerHTML = `
+    <div class="p-8 text-center space-y-3">
+      <div class="text-amber-600 font-semibold">A processar...</div>
+      <p class="text-sm text-gray-600">O pagamento está a ser processado. Vais receber um email assim que estiver confirmado.</p>
+      <button onclick="toggleCheckout(false);window.history.replaceState({},'',window.location.pathname)" class="btn-accent w-full py-3 rounded">FECHAR</button>
+    </div>`;
 }
 
-// PayPal loader (client-side only)
-let paypalLoaded=false;
-function loadPayPal(){
-  if(paypalLoaded && window.paypal){ renderPayPalButton(); return; }
-  if(document.getElementById('paypal-sdk')){ setTimeout(renderPayPalButton,300); return; }
-  const s=document.createElement('script');
-  s.id='paypal-sdk';
-  s.src=`https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(PAYPAL_CLIENT_ID)}&currency=${PAYPAL_CURRENCY}`;
-  s.onload=()=>{ paypalLoaded=true; renderPayPalButton(); };
-  document.body.appendChild(s);
-}
-function renderPayPalButton(){
-  const container=document.getElementById('paypal-button-container');
-  if(!container || !window.paypal) return;
-  container.innerHTML='';
-  window.paypal.Buttons({
-    style:{ layout:'vertical', color:'gold', shape:'rect', label:'paypal' },
-    createOrder:(data,actions)=>actions.order.create({
-      purchase_units:[{ amount:{ value:cartTotal().toFixed(2), currency_code:PAYPAL_CURRENCY }, description:'GymFuel — Encomenda' }]
-    }),
-    onApprove: async (data,actions)=>{
-      const details = await actions.order.capture();
-      try {
-        const enc = await createOrderInDb();
-        orderCreated={ ...enc, method:'paypal', payment_id:details.id };
-        await clearCart(); checkoutStep=3; renderCheckout();
-      } catch(e){ alert('Pagamento recebido mas houve erro a gravar a encomenda: '+e.message); }
-    },
-    onError:(err)=>{ console.error(err); alert('Erro PayPal: '+err.message); }
-  }).render('#paypal-button-container');
-}
+// PayPal foi removido — usamos Stripe agora (ver Edge Function `stripe-checkout`).
 
 // =============================================
 // search
@@ -2142,6 +2203,9 @@ sb.auth.onAuthStateChange(async (_e,session)=>{
   renderCategoryChips();
   renderProducts();
   refreshCartUI();
+
+  // Verifica se voltámos do Stripe (com ?stripe_session_id=...)
+  handleStripeReturn();
 })();
 </script>
 
