@@ -152,26 +152,21 @@
 </footer>
 
 <script>
-// ============================================
 // CONFIG SUPABASE
-// ============================================
 const SUPABASE_URL = 'https://comrswwbipbmffyxvgyc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// ============================================
 // ESTADO
-// ============================================
+
 let PRODUCTS = [];
 let CART = JSON.parse(localStorage.getItem('gymfuel_cart') || '[]');
 let query = '';
 let activeCategory = 'all';
 let modalQty = 1;
 
-// ============================================
 // HELPERS
-// ============================================
 function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 function escapeAttr(s){ return escapeHtml(s).replace(/`/g,'&#96;'); }
 function saveCart(){ localStorage.setItem('gymfuel_cart', JSON.stringify(CART)); refreshCartUI(); }
@@ -181,9 +176,7 @@ function refreshCartUI(){
   if(el) el.textContent = count;
 }
 
-// ============================================
 // CARREGAR PRODUTOS
-// ============================================
 async function loadProducts(){
   const { data, error } = await sb
     .from('produtos')
@@ -207,9 +200,8 @@ async function loadProducts(){
   renderProducts();
 }
 
-// ============================================
-// CATEGORIAS (chips)
-// ============================================
+
+// CATEGORIAS 
 function renderCategoryChips(){
   const wrap = document.getElementById('category-chips');
   const cats = ['all', ...Array.from(new Set(PRODUCTS.map(p => (p.category||'').trim()).filter(Boolean)))];
@@ -231,9 +223,7 @@ function setCategory(c){
   document.getElementById('product-grid').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-// ============================================
 // RENDER
-// ============================================
 function renderProducts(){
   const grid = document.getElementById('product-grid');
   const empty = document.getElementById('products-empty');
@@ -281,9 +271,7 @@ function renderProducts(){
   if(window.lucide) lucide.createIcons();
 }
 
-// ============================================
 // MODAL DE PRODUTO
-// ============================================
 function openProduct(id){
   const p = PRODUCTS.find(x => x.id === id);
   if(!p) return;
@@ -319,8 +307,7 @@ function openProduct(id){
         </div>
         <div class="flex gap-3">
           <button onclick="addToCart('${escapeAttr(p.id)}', modalQty); closeProduct()" class="btn-accent flex-1 py-3.5 rounded-md text-sm" data-testid="modal-add-to-cart">ADICIONAR AO CARRINHO</button>
-          <button class="px-5 py-3.5 border-2 border-gray-200 rounded-md text-sm font-semibold hover:border-gray-400"><i data-lucide="heart" class="w-[18px] h-[18px]"></i></button>
-        </div>
+         </div>
       </div>
     </div>`;
   m.classList.remove('hidden');
