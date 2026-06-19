@@ -33,7 +33,7 @@
 
 <body class="bg-white text-gray-900">
 
-<!-- ============ HEADER (igual ao resto do site) ============ -->
+<!-- ============ HEADER============ -->
 <header class="bg-black text-white sticky top-0 z-50">
   <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-8">
     <a href="index.html" class="flex items-center shrink-0" data-testid="logo-home-link">
@@ -106,7 +106,7 @@
 <!-- ============ MODAL DE PRODUTO ============ -->
 <div id="product-modal" class="fixed inset-0 z-[100] hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" onclick="closeProduct()" data-testid="product-modal"></div>
 
-<!-- ============ FOOTER (igual ao resto do site) ============ -->
+<!-- ============ FOOTER============ -->
 <footer id="footer" class="bg-black text-gray-300 pt-14 pb-6">
   <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
     <div>
@@ -262,7 +262,7 @@ function renderProducts(){
           <h3 class="font-display text-base md:text-lg font-bold leading-tight flex-1 line-clamp-2">${escapeHtml(p.name)}</h3>
           <div class="flex items-end justify-between mt-3">
             <div class="text-xl font-bold text-orange-500">€${Number(p.price||0).toFixed(2)}</div>
-            <button onclick="event.stopPropagation();addToCart('${escapeAttr(p.id)}')" class="btn-accent text-xs px-4 py-2 rounded" data-testid="add-to-cart-${escapeAttr(p.id)}">ADD</button>
+            <button onclick="event.stopPropagation();addToCart('${escapeAttr(p.id)}')" class="btn-accent text-xs px-4 py-2 rounded" data-testid="add-to-cart-${escapeAttr(p.id)}">ADICIONAR</button>
           </div>
         </div>
       </article>`;
