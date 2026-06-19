@@ -267,14 +267,9 @@
 <!-- Supabase SDK -->
 
 <script>
-// =============================================
-// ⚙️ CONFIGURAÇÃO 
-// =============================================
+//CONFIGURAÇÃO 
 const SUPABASE_URL='https://comrswwbipbmffyxvgyc.supabase.co';
 const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbXJzd3diaXBibWZmeXh2Z3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjQ5MDksImV4cCI6MjA4ODIwMDkwOX0.qHP3IFvWDj2-Ul3ujsO9N8T2C8g2zmRfpBXhxS9HnT4';
-
-// PayPal — REMOVIDO. Agora usamos Stripe (Edge Function no Supabase).
-// Endpoint da Edge Function: https://<project-ref>.supabase.co/functions/v1/criar-pagamento
 const STRIPE_FUNCTION_URL = SUPABASE_URL + '/functions/v1/criar-pagamento';
 
 // =============================================
@@ -289,9 +284,7 @@ let PRODUCTS=[], CART=[], activeTab='Featured', activeCategory=null, query='';
 let USER=null;
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// =============================================
-// HERO SLIDER
-// =============================================
+  // HERO SLIDER
 let slideIdx=0;
 const slides = document.querySelectorAll('#slider .slide');
 const dotsEl = document.getElementById('slide-dots');
@@ -305,18 +298,14 @@ document.getElementById('prev-slide').onclick=()=>showSlide(slideIdx-1);
 document.getElementById('next-slide').onclick=()=>showSlide(slideIdx+1);
 setInterval(()=>showSlide(slideIdx+1),6000);
 
-// =============================================
 // COUNTDOWN
-// =============================================
 let cdState={d:30,h:23,m:59,s:43};
 const cdEl=document.getElementById('countdown');
 function renderCountdown(){ cdEl.innerHTML=['d','h','m','s'].map(k=>`<div class="countdown-box">${String(cdState[k]).padStart(2,'0')}</div>`).join(''); }
 setInterval(()=>{ cdState.s--; if(cdState.s<0){cdState.s=59;cdState.m--;} if(cdState.m<0){cdState.m=59;cdState.h--;} if(cdState.h<0){cdState.h=23;cdState.d--;} if(cdState.d<0){cdState.d=30;cdState.h=23;cdState.m=59;cdState.s=59;} renderCountdown(); },1000);
 renderCountdown();
 
-// =============================================
 // TABS
-// =============================================
 const tabsEl=document.getElementById('tabs');
 tabsEl.innerHTML = ''; 
 ['Featured','Best Seller','Top Rated'].forEach(t=>{
@@ -327,9 +316,7 @@ tabsEl.innerHTML = '';
   tabsEl.appendChild(b);
 });
 
-// =============================================
 // DATA
-// =============================================
 async function loadProducts(){
   const { data, error } = await sb.from('produtos').select('*').eq('active',true).order('name');
   if(error){ console.error(error); return; }
@@ -344,9 +331,7 @@ async function loadslides(){
  if(error){ console.error(error); return; }
  return slides;}
 
-// =============================================
-// RENDERS
-// =============================================
+// RENDERIZAÇÃO
 function stars(v=4){
   let h='<div class="flex items-center gap-0.5">';
   for(let i=1;i<=5;i++) h+=`<svg class="w-3 h-3 ${i<=Math.round(v)?'fill-orange-500 text-orange-500':'text-gray-300'}" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>`;
@@ -417,9 +402,7 @@ function renderDeals(){
 }
 function setCategory(c){ activeCategory=c||null; renderCategoryChips(); renderProducts(); window.scrollTo({top:document.getElementById('products').offsetTop-80,behavior:'smooth'}); }
 
-// =============================================
-// CART
-// =============================================
+// CARRINHO
 async function saveCartItem(id,qty){
   if(qty<=0) await sb.from('carrinho').delete().eq('session_id',SESSION_ID).eq('produto_id',id);
   else await sb.from('carrinho').upsert({session_id:SESSION_ID,produto_id:id,quantidade:qty,updated_at:new Date().toISOString()},{onConflict:'session_id,produto_id'});
@@ -469,9 +452,7 @@ function toggleCart(open){ document.getElementById('cart-drawer').classList.togg
 document.getElementById('open-cart').onclick=()=>toggleCart(true);
 document.getElementById('clear-cart-btn').onclick=()=>clearCart();
 
-// =============================================
-// PRODUCT MODAL
-// =============================================
+// CAIXA DIÁLOGO DO PRODUTO
 let modalQty=1;
 function openProduct(id){
   const p=PRODUCTS.find(x=>x.id===id); if(!p) return;
@@ -514,9 +495,7 @@ function openProduct(id){
 function modalQtyChange(d){ modalQty=Math.max(1,modalQty+d); const i=document.getElementById('modal-qty-input'); if(i) i.value=modalQty; }
 function closeProduct(){ document.getElementById('product-modal').classList.add('hidden'); }
 
-// =============================================
-// AUTH
-// =============================================
+// AUTENTICAÇÃO
 let authMode='signin';
 function renderAuthArea(){
   const el=document.getElementById('auth-area');
@@ -565,7 +544,7 @@ document.getElementById('auth-form').addEventListener('submit', async (e)=>{
       email: email
     }, { onConflict: 'id' });
   }
-  alert('✅ Conta criada! Se a confirmação por email estiver ativa, verifica o teu email.');
+  alert(' Conta criada! Se a confirmação por email estiver ativa, verifica o teu email.');
 } else {
       const { error } = await sb.auth.signInWithPassword({email,password});
       if(error) throw error;
@@ -596,9 +575,7 @@ async function loadUserProfile(){
   }
 }
 
-// =============================================
-// CHECKOUT (multi-step) — só Stripe
-// =============================================
+// CHECKOUT ---Stripe
 let checkoutInfo={nome:'',email:'',morada:'',cidade:'',codigo:''};
 let checkoutStep=1;
 let orderCreated=null;
@@ -688,9 +665,7 @@ function renderCheckout(){
   }
 }
 
-// =============================================
 // STRIPE CHECKOUT (via Edge Function)
-// =============================================
 async function startStripeCheckout(){
   if(stripeLoading) return;
   const btn=document.getElementById('stripe-pay-btn');
@@ -732,7 +707,7 @@ async function startStripeCheckout(){
     window.location.href = data.url;
   } catch(err) {
     console.error(err);
-    errEl.textContent = '❌ '+err.message;
+    errEl.textContent = 'ERRO!'+err.message;
     errEl.classList.remove('hidden');
     stripeLoading=false;
     btn.disabled=false;
@@ -740,13 +715,11 @@ async function startStripeCheckout(){
   }
 }
 
-// =============================================
-// CRIAR ENCOMENDA NA BD (após pagamento confirmado)
-// =============================================
+// CRIAR ENCOMENDA NA BASE DE DADOS  (após pagamento confirmado)
 async function createOrderInDb(info, cart, sessionData){
   const total = (sessionData?.amount_total || 0) / 100;
 
-  // Se user autenticado, atualiza o perfil com os dados de envio
+  // Atualiza o perfil com os dados de envio
   if(USER){
     await sb.from('utilizadores').upsert({
       id: USER.id,
@@ -774,9 +747,7 @@ async function createOrderInDb(info, cart, sessionData){
   return { id:enc.id, total };
 }
 
-// =============================================
-// RETORNO DO STRIPE (success_url tem ?stripe_session_id=...)
-// =============================================
+// RETORNO DO STRIPE 
 async function handleStripeReturn(){
   const params = new URLSearchParams(window.location.search);
   const sessionId = params.get('stripe_session_id');
@@ -850,16 +821,10 @@ async function handleStripeReturn(){
     </div>`;
 }
 
-// PayPal foi removido — usamos Stripe agora (ver Edge Function `stripe-checkout`).
-
-// =============================================
-// search
-// =============================================
+// PROCURAR
 document.getElementById('search').addEventListener('input',(e)=>{ query=e.target.value; renderProducts(); });
 
-// =============================================
 // INIT
-// =============================================
 (async function init(){
 
   // auth state
@@ -883,12 +848,6 @@ sb.auth.onAuthStateChange(async (_e,session)=>{
   handleStripeReturn();
 })();
 </script>
-
-
-
-
-
-
 
 </body></html>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
