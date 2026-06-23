@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sobre Nós — GymFuel</title>
+<meta name="description" content="Conhece a história, missão e valores da GymFuel — a marca portuguesa que alimenta o teu treino.">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- Supabase (apenas para cart-count partilhado) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+  :root { --accent:#0ac235; --accent-hover:#3120e9; }
+  html,body{margin:0;padding:0;font-family:'Inter',system-ui,sans-serif;background:#fff;}
+  .font-display{font-family:'Oswald','Inter',sans-serif;letter-spacing:.02em;}
+  .btn-accent{background:var(--accent);color:#fff;font-weight:700;letter-spacing:.08em;transition:background .2s;}
+  .btn-accent:hover{background:var(--accent-hover);}
+  /* Padrão diagonal sutil para hero */
+  .hero-pattern{
+    background-image:
+      linear-gradient(135deg, rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(45deg,  rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .glow-blue{
+    background: radial-gradient(circle at 0% 0%, rgba(29,78,216,.55) 0%, transparent 45%);
+  }
+  .glow-green{
+    background: radial-gradient(circle at 100% 100%, rgba(10,194,53,.45) 0%, transparent 45%);
+  }
+  .value-card{transition:transform .25s, box-shadow .25s, border-color .25s;}
+  .value-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -16px rgba(0,0,0,.25);border-color:var(--accent);}
+  .stat-num{font-variant-numeric: tabular-nums;}
+  .timeline-dot{box-shadow:0 0 0 6px #fff, 0 0 0 8px var(--accent);}
+</style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+<!-- ============ HEADER ============ -->
+<header class="bg-black text-white sticky top-0 z-50">
+  <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-8">
+    <a href="index.html" class="flex items-center shrink-0" data-testid="logo-home-link">
+      <span class="font-display text-3xl font-bold tracking-wider">Gym<span class="text-blue-700">Fuel</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 font-display text-sm tracking-widest">
+      <a href="index.html" class="hover:text-blue-400" data-testid="nav-home">Página Inicial</a>
+      <a href="Loja.html" class="hover:text-blue-400" data-testid="nav-shop">Loja</a>
+      <a href="Sobre-nos.html" class="text-blue-400" data-testid="nav-about">Sobre Nós</a>
+      <a href="Contactos.html" class="hover:text-blue-400" data-testid="nav-contact">Contactos</a>
+    </nav>
+    <div class="flex-1"></div>
+    <div class="flex items-center gap-5 shrink-0">
+      <a href="index.html#account" class="flex items-center gap-2 text-sm hover:text-orange-400" data-testid="nav-account">
+        <i data-lucide="user" class="w-5 h-5"></i>
+        <span class="hidden md:inline">Conta</span>
+      </a>
+      <a href="index.html#cart" class="relative hover:text-orange-400" data-testid="open-cart-link">
+        <i data-lucide="shopping-cart" class="w-[22px] h-[22px]"></i>
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
+      </a>
+    </div>
+  </div>
+  <div class="bg-[#fce8dd] text-gray-800">
+    <div class="max-w-[1400px] mx-auto px-6 py-3 flex flex-wrap items-center justify-around gap-4 text-sm font-medium">
+      <div class="flex items-center gap-2"><i data-lucide="truck" class="w-[18px] h-[18px] text-orange-500"></i> Entrega grátis em encomendas acima de 75€</div>
+      <div class="hidden md:block w-px h-5 bg-gray-400/40"></div>
+      <div class="flex items-center gap-2"><i data-lucide="package" class="w-[18px] h-[18px] text-orange-500"></i> Devoluções fáceis em todas as encomendas</div>
+      <div class="hidden md:block w-px h-5 bg-gray-400/40"></div>
+      <div class="flex items-center gap-2"><i data-lucide="headphones" class="w-[18px] h-[18px] text-orange-500"></i> 24/7 Apoio ao Cliente</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-black text-white overflow-hidden">
+  <div class="absolute inset-0 hero-pattern opacity-60"></div>
+  <div class="absolute inset-0 glow-blue"></div>
+  <div class="absolute inset-0 glow-green"></div>
+  <div class="relative max-w-[1400px] mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.3em] text-[--accent] mb-6">
+        <span class="w-8 h-px bg-[--accent]"></span> SOBRE NÓS
+      </div>
+      <h1 class="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-wider">
+        ALIMENTA<br>
+        O TEU <span class="text-blue-500">TREINO.</span>
+      </h1>
+      <p class="text-gray-300 text-lg mt-6 leading-relaxed max-w-xl">
+        Somos uma marca portuguesa criada para quem leva o treino a sério.
+        Suplementos premium, preços honestos e uma plataforma feita à medida do atleta.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="Loja.html" class="btn-accent inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm" data-testid="hero-shop-btn">
+          VER PRODUTOS <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="Contactos.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold tracking-wider border-2 border-white/30 text-white hover:bg-white hover:text-black transition" data-testid="hero-contact-btn">
+          FALAR CONNOSCO
+        </a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -inset-4 bg-gradient-to-tr from-blue-700 to-green-500 rounded-3xl opacity-30 blur-2xl"></div>
+      <div class="relative bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-10">
+        <div class="font-display text-9xl md:text-[10rem] font-bold leading-none">
+          <span class="text-white">Gym</span><span class="text-blue-500">Fuel</span>
+        </div>
+        <div class="mt-5 text-xs tracking-[0.4em] text-gray-400">EST. 2025 · PORTUGAL</div>
+        <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+          <div>
+            <div class="font-display text-3xl font-bold text-[--accent] stat-num">100%</div>
+            <div class="text-[10px] tracking-widest text-gray-400 mt-1">QUALIDADE</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl font-bold text-blue-500 stat-num">24h</div>
+            <div class="text-[10px] tracking-widest text-gray-400 mt-1">ENVIO</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl font-bold text-orange-500 stat-num">0</div>
+            <div class="text-[10px] tracking-widest text-gray-400 mt-1">COMPROMISSOS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="h-1.5 bg-[--accent]"></div>
+</section>
+
+<!-- ============ A NOSSA MISSÃO ============ -->
+<section class="max-w-[1400px] mx-auto px-6 py-20 md:py-28 grid md:grid-cols-12 gap-10">
+  <div class="md:col-span-4">
+    <div class="text-xs font-bold tracking-[0.3em] text-orange-500 mb-3">A NOSSA MISSÃO</div>
+    <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+      Suplementos<br>
+      <span class="text-blue-700">sem mistério.</span>
+    </h2>
+  </div>
+  <div class="md:col-span-8 space-y-5 text-gray-700 text-lg leading-relaxed">
+    <p>
+      Na GymFuel acreditamos que ir buscar a tua proteína, creatina ou pré-treino devia
+      ser tão fácil como pôr uns ténis e ir treinar. Sem letras pequenas, sem preços
+      inflacionados, sem dezenas de marcas que ninguém conhece.
+    </p>
+    <p>
+      Selecionamos apenas o essencial e o que <strong>realmente funciona</strong> —
+      produtos certificados, com origem clara e ao melhor preço do mercado nacional.
+      Quem treina sabe distinguir o marketing do desempenho. Nós também.
+    </p>
+    <div class="flex items-center gap-3 pt-4 border-t border-gray-200">
+      <div class="w-10 h-10 rounded-full bg-[--accent] flex items-center justify-center">
+        <i data-lucide="check" class="w-5 h-5 text-white"></i>
+      </div>
+      <div class="text-sm font-semibold text-gray-900">Honesto. Eficaz. Português.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NÚMEROS ============ -->
+<section class="bg-black text-white py-16">
+  <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div data-testid="stat-products">
+      <div class="font-display text-5xl md:text-6xl font-bold text-[--accent] stat-num">40+</div>
+      <div class="text-xs tracking-[0.3em] text-gray-400 mt-2">PRODUTOS</div>
+    </div>
+    <div data-testid="stat-customers">
+      <div class="font-display text-5xl md:text-6xl font-bold text-blue-500 stat-num">1k+</div>
+      <div class="text-xs tracking-[0.3em] text-gray-400 mt-2">ATLETAS</div>
+    </div>
+    <div data-testid="stat-delivery">
+      <div class="font-display text-5xl md:text-6xl font-bold text-orange-500 stat-num">24h</div>
+      <div class="text-xs tracking-[0.3em] text-gray-400 mt-2">ENVIO RÁPIDO</div>
+    </div>
+    <div data-testid="stat-support">
+      <div class="font-display text-5xl md:text-6xl font-bold text-white stat-num">7/7</div>
+      <div class="text-xs tracking-[0.3em] text-gray-400 mt-2">APOIO AO CLIENTE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALORES ============ -->
+<section class="max-w-[1400px] mx-auto px-6 py-20 md:py-28">
+  <div class="text-center mb-14">
+    <div class="text-xs font-bold tracking-[0.3em] text-orange-500 mb-3">O QUE NOS MOVE</div>
+    <h2 class="font-display text-4xl md:text-5xl font-bold">Quatro princípios. Zero atalhos.</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <article class="value-card bg-white border-2 border-gray-200 rounded-2xl p-7" data-testid="value-quality">
+      <div class="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-5">
+        <i data-lucide="award" class="w-7 h-7 text-[--accent]"></i>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-2">QUALIDADE PRIMEIRO</h3>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Trabalhamos só com fabricantes europeus certificados. Cada lote tem rastreabilidade total.
+      </p>
+    </article>
+
+    <article class="value-card bg-white border-2 border-gray-200 rounded-2xl p-7" data-testid="value-transparency">
+      <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+        <i data-lucide="eye" class="w-7 h-7 text-blue-700"></i>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-2">TRANSPARÊNCIA</h3>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Mostramos sempre composição, doses por porção e tempo de absorção. Sem ingredientes escondidos.
+      </p>
+    </article>
+
+    <article class="value-card bg-white border-2 border-gray-200 rounded-2xl p-7" data-testid="value-performance">
+      <div class="w-14 h-14 rounded-xl bg-orange-50 flex items-center justify-center mb-5">
+        <i data-lucide="zap" class="w-7 h-7 text-orange-500"></i>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-2">PERFORMANCE</h3>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Só vendemos o que nós próprios usamos no treino. Se não funciona, não entra no catálogo.
+      </p>
+    </article>
+
+    <article class="value-card bg-white border-2 border-gray-200 rounded-2xl p-7" data-testid="value-community">
+      <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-5">
+        <i data-lucide="users" class="w-7 h-7 text-purple-600"></i>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-2">COMUNIDADE</h3>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Atletas, treinadores e amadores. Crescemos juntos com quem dá tudo no ginásio.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ TIMELINE (a nossa história) ============ -->
+<section class="bg-gray-50 py-20 md:py-28">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="text-xs font-bold tracking-[0.3em] text-orange-500 mb-3">A NOSSA HISTÓRIA</div>
+      <h2 class="font-display text-4xl md:text-5xl font-bold">Do ginásio para a tua porta.</h2>
+    </div>
+
+    <div class="relative">
+      <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[--accent]/40 md:-translate-x-1/2"></div>
+
+      <div class="space-y-12">
+        <!-- Etapa 1 -->
+        <div class="relative md:grid md:grid-cols-2 md:gap-12">
+          <div class="md:text-right pl-12 md:pl-0">
+            <div class="text-xs font-bold tracking-[0.3em] text-[--accent]">2025 · JANEIRO</div>
+            <h3 class="font-display text-2xl font-bold mt-1">A IDEIA</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Nasce a vontade de criar uma loja online portuguesa, simples e honesta para suplementos desportivos.
+            </p>
+          </div>
+          <div></div>
+          <span class="absolute left-4 md:left-1/2 top-1 w-4 h-4 rounded-full bg-[--accent] timeline-dot md:-translate-x-1/2"></span>
+        </div>
+        <!-- Etapa 2 -->
+        <div class="relative md:grid md:grid-cols-2 md:gap-12">
+          <div></div>
+          <div class="pl-12 md:pl-12">
+            <div class="text-xs font-bold tracking-[0.3em] text-[--accent]">2025 · ABRIL</div>
+            <h3 class="font-display text-2xl font-bold mt-1">A PLATAFORMA</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Começa o desenvolvimento da loja com tecnologias modernas: HTML5, Tailwind, Supabase e Stripe.
+            </p>
+          </div>
+          <span class="absolute left-4 md:left-1/2 top-1 w-4 h-4 rounded-full bg-[--accent] timeline-dot md:-translate-x-1/2"></span>
+        </div>
+        <!-- Etapa 3 -->
+        <div class="relative md:grid md:grid-cols-2 md:gap-12">
+          <div class="md:text-right pl-12 md:pl-0">
+            <div class="text-xs font-bold tracking-[0.3em] text-[--accent]">2025 · OUTUBRO</div>
+            <h3 class="font-display text-2xl font-bold mt-1">LANÇAMENTO</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              <strong>gymfuel.store</strong> entra online. Primeiros produtos disponíveis e primeiras encomendas a sair.
+            </p>
+          </div>
+          <div></div>
+          <span class="absolute left-4 md:left-1/2 top-1 w-4 h-4 rounded-full bg-[--accent] timeline-dot md:-translate-x-1/2"></span>
+        </div>
+        <!-- Etapa 4 -->
+        <div class="relative md:grid md:grid-cols-2 md:gap-12">
+          <div></div>
+          <div class="pl-12 md:pl-12">
+            <div class="text-xs font-bold tracking-[0.3em] text-blue-700">A SEGUIR · 2026</div>
+            <h3 class="font-display text-2xl font-bold mt-1">EXPANSÃO</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Novos produtos, parcerias com ginásios nacionais e programa de fidelização para os atletas mais regulares.
+            </p>
+          </div>
+          <span class="absolute left-4 md:left-1/2 top-1 w-4 h-4 rounded-full bg-blue-700 timeline-dot md:-translate-x-1/2"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="relative bg-black text-white overflow-hidden">
+  <div class="absolute inset-0 hero-pattern opacity-50"></div>
+  <div class="absolute inset-0 glow-green"></div>
+  <div class="relative max-w-[1100px] mx-auto px-6 py-20 md:py-28 text-center">
+    <h2 class="font-display text-4xl md:text-6xl font-bold leading-tight">
+      Pronto para subir <br>de <span class="text-[--accent]">nível?</span>
+    </h2>
+    <p class="text-gray-300 text-lg mt-5 max-w-xl mx-auto">
+      Junta-te aos atletas que já alimentam o treino com a GymFuel.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="Loja.html" class="btn-accent inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm" data-testid="cta-shop">
+        EXPLORAR A LOJA <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="index.html#account" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold tracking-wider border-2 border-white/30 hover:bg-white hover:text-black transition" data-testid="cta-account">
+        CRIAR CONTA
+      </a>
+    </div>
+  </div>
+  <div class="h-1.5 bg-[--accent] relative"></div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer" class="bg-black text-gray-300 pt-14 pb-6">
+  <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div>
+      <div class="font-display text-2xl font-bold text-white">Gym<span class="text-orange-500">Fuel</span></div>
+      <p class="text-sm mt-3 text-gray-400">Alimenta a tua performance. Suplementos de topo para quem treina a sério.</p>
+      <div class="flex gap-3 mt-4">
+        <i data-lucide="facebook" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+        <i data-lucide="instagram" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+        <i data-lucide="twitter" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+        <i data-lucide="youtube" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-display text-white tracking-widest text-sm mb-3">SHOP</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="Loja.html" class="hover:text-orange-500">Proteínas</a></li>
+        <li><a href="Loja.html" class="hover:text-orange-500">Creatina</a></li>
+        <li><a href="Loja.html" class="hover:text-orange-500">Pré-treino</a></li>
+        <li><a href="Loja.html" class="hover:text-orange-500">Vitaminas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-white tracking-widest text-sm mb-3">INFO</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="Sobre-nos.html" class="hover:text-orange-500">Sobre nós</a></li>
+        <li><a href="Desenvolvimento.html" class="hover:text-orange-500">Envios</a></li>
+        <li><a href="Desenvolvimento.html" class="hover:text-orange-500">Devoluções</a></li>
+        <li><a href="Contactos.html" class="hover:text-orange-500">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-white tracking-widest text-sm mb-3">NEWSLETTER</h4>
+      <p class="text-sm text-gray-400 mb-3">Recebe 10% off na 1ª compra.</p>
+      <div class="flex">
+        <input type="email" placeholder="teu@email.com" class="flex-1 px-3 py-2 bg-gray-900 border border-gray-700 text-sm rounded-l">
+        <button class="btn-accent px-4 rounded-r text-xs">OK</button>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-[1400px] mx-auto px-6 mt-10 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+    © <span id="year"></span> GymFuel — Tudo para o teu corpo. Tudo para o teu treino.
+  </div>
+</footer>
+
+<script>
+  // Cart count partilhado via localStorage (com o resto do site)
+  try {
+    const cart = JSON.parse(localStorage.getItem('gymfuel_cart') || '[]');
+    const count = cart.reduce((s,i)=>s + (i.qty||0), 0);
+    document.getElementById('cart-count').textContent = count;
+  } catch(_) {}
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (window.lucide) lucide.createIcons();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
