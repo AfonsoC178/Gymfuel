@@ -472,7 +472,7 @@ function openProduct(id){
         <div class="flex items-center gap-2 mb-4">${stars(4)}${p.sku?`<span class="ml-2 text-xs bg-gray-100 px-2 py-1 rounded font-mono text-gray-600">SKU: ${p.sku}</span>`:''}</div>
         <div class="text-3xl font-bold text-orange-500 mb-4">€${p.price.toFixed(2)}</div>
         ${p.badge?`<div class="inline-block self-start bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-4">${p.badge}</div>`:''}
-        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">${p.desc||'Produto selecionado da gama GymFuel — qualidade premium.'}</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">${p.desc||'Produto selecionado da gama GymFuel de qualidade premium.'}</p>
         <div class="flex items-center gap-4 mb-5">
           <span class="text-sm font-semibold text-gray-700">Quantidade:</span>
           <div class="flex items-center border-2 border-gray-200 rounded-lg overflow-hidden">
