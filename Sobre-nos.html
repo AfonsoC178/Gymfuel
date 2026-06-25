@@ -333,7 +333,7 @@
       <div class="font-display text-2xl font-bold text-white">Gym<span class="text-orange-500">Fuel</span></div>
       <p class="text-sm mt-3 text-gray-400">Alimenta a tua performance. Suplementos de topo para quem treina a sério.</p>
       <div class="flex gap-3 mt-4">
-        <i data-lucide="facebook" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer" href"facebook.com"> </i>
+        <i data-lucide="facebook" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"> </i>
         <i data-lucide="instagram" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
         <i data-lucide="twitter" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
         <i data-lucide="youtube" class="w-[18px] h-[18px] hover:text-orange-500 cursor-pointer"></i>
@@ -372,7 +372,7 @@
 </footer>
 
 <script>
-  // Cart count partilhado via localStorage (com o resto do site)
+  // Cart count
   try {
     const cart = JSON.parse(localStorage.getItem('gymfuel_cart') || '[]');
     const count = cart.reduce((s,i)=>s + (i.qty||0), 0);
