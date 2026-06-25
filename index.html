@@ -504,7 +504,7 @@ function renderAuthArea(){
         <button onclick="doLogout()" title="Terminar sessão" class="hover:text-orange-400"><i data-lucide="log-out" class="w-[18px] h-[18px]"></i></button>
       </div>`;
   } else {
-    el.innerHTML=`<button onclick="openAuth('signin')" class="flex items-center gap-2 text-sm hover:text-orange-400"><i data-lucide="user" class="w-5 h-5"></i><span class="hidden md:inline">Sign In / Register</span></button>`;
+    el.innerHTML=`<button onclick="openAuth('signin')" class="flex items-center gap-2 text-sm hover:text-orange-400"><i data-lucide="user" class="w-5 h-5"></i><span class="hidden md:inline">Iniciar sessão/ Registar</span></button>`;
   }
   if(window.lucide) lucide.createIcons();
 }
