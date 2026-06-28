@@ -671,7 +671,15 @@ async function startStripeCheckout(){
   stripeLoading=true;
   btn.disabled=true;
   document.getElementById('stripe-pay-label').textContent='A criar sessão de pagamento...';
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
 
+<stripe-buy-button
+  buy-button-id="buy_btn_1TnNkrEBwR4iT7r3xgLhiWR8"
+  publishable-key="pk_test_51TnNWPEBwR4iT7r3dMreg4iavgI0NtosdGi2aZKnE0vU8RXEQCdUn5u4eiT0f4ZP2RG4QDp80l6unhW67jZ24wSG00E58iZ7Qi"
+>
+</stripe-buy-button>
   try {
     // Guarda os dados de envio localmente para usar quando voltar do Stripe
     sessionStorage.setItem('gymfuel_pending_checkout', JSON.stringify({
@@ -701,7 +709,7 @@ async function startStripeCheckout(){
     }
 
     // Redireciona para o Stripe Checkout
-    window.location.href = https://buy.stripe.com/test_28E6oHghc5y47NLbARdUY00;
+    window.location.href = data.url;
   } catch(err) {
     console.error(err);
     errEl.textContent = 'ERRO!'+err.message;
